@@ -16,3 +16,9 @@ templates = Jinja2Templates(directory="templates/")
 @router.get("/find_rooms", response_class=HTMLResponse) # 펑션 호출 방식
 async def find_rooms(request:Request):
     return templates.TemplateResponse(name="room/find_rooms.html", context={'request':request})
+
+@router.post("/find_rooms")
+async def find_rooms(request:Request):
+    search_dict = dict(await request.form())
+    print(search_dict)
+    return templates.TemplateResponse(name="room/find_rooms.html", context={'request':request})
