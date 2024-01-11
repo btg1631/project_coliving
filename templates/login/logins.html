@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block main_container %}
-<h2>로그인 페이지</h2>
 
 <!-- <div class="row">
     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -63,7 +62,13 @@
                                     placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                            <div class="row">
+                                <a href="" class="col-1"></a>
+                                <button class="col-4 mb-2 btn btn-lg rounded-3 btn-primary" formaction="/" formmethod="post" type="submit" >Login</button>
+                                <a href="" class="col-2"></a>
+                                <button class="col-4 mb-2 btn btn-lg rounded-3 btn-primary" formaction="/login/usersignups" formmethod="get" type="submit" >Sign up</button>
+                                <a href="" class="col-1"></a>
+                            </div>
                             <small class="text-body-secondary">By clicking Sign up, you agree to the terms of
                                 use.</small>
 
@@ -80,9 +85,9 @@
                     <div class="modal-header p-5 pb-4 border-bottom-0">
                         <h1 class="fw-bold mb-0 fs-2">기업 회원</h1>
                     </div>
-
+        
                     <div class="modal-body p-5 pt-0">
-                        <form class="">
+                        <form action="">
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control rounded-3" id="floatingInput"
                                     placeholder="name@example.com">
@@ -93,8 +98,14 @@
                                     placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" formaction="/" type="submit" >Sign
-                                up</button>
+                            <div class="row">
+                                <a href="" class="col-1"></a>
+                                <button class="col-4 mb-2 btn btn-lg rounded-3 btn-primary" formaction="/enter" formmethod="post" type="submit" >Login</button>
+                                <a href="" class="col-2"></a>
+                                <button class="col-4 mb-2 btn btn-lg rounded-3 btn-primary" formaction="/login/entersignups" formmethod="get" type="submit" >Sign up</button>
+                                <a href="" class="col-1"></a>
+                            </div>
+
                             <small class="text-body-secondary">By clicking Sign up, you agree to the terms of
                                 use.</small>
 

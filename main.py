@@ -43,9 +43,22 @@ async def root(request:Request):
 
     return templates.TemplateResponse("main.html"
                                       , {'request':request})
+@app.post("/")
+async def root(request:Request):
+    user_dict = dict(await request.form())
+    print(user_dict)
+    return templates.TemplateResponse("main.html"
+                                      , {'request':request})
 
 @app.get("/enter")
 async def root(request:Request):
 
+    return templates.TemplateResponse("main_enter.html"
+                                      , {'request':request})
+
+@app.post("/enter")
+async def root(request:Request):
+    user_dict = dict(await request.form())
+    print(user_dict)
     return templates.TemplateResponse("main_enter.html"
                                       , {'request':request})

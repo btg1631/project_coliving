@@ -17,3 +17,11 @@ templates = Jinja2Templates(directory="templates/")
 @router.get("/logins", response_class=HTMLResponse)
 async def communities(request:Request):
     return templates.TemplateResponse(name="login/logins.html", context={'request':request})
+
+@router.get("/usersignups", response_class=HTMLResponse)
+async def communities(request:Request):
+    return templates.TemplateResponse(name="login/user_sign_ups.html", context={'request':request})
+
+@router.get("/entersignups", response_class=HTMLResponse)
+async def communities(request:Request):
+    return templates.TemplateResponse(name="login/enter_sign_ups.html", context={'request':request})
