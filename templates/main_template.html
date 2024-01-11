@@ -12,22 +12,53 @@
 </head>
 
 <body>
+    {% block nav_container %}
     <nav class="container">
-        {% block nav_container %}
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Solving Problems</a>
-                <ul class="dropdown-menu">
-                    <li class="nav-item" class="dropdown-item"><a href="/menu/communities" >문제 작성</a></li>
-                    <li class="nav-item" class="dropdown-item"><a href="/menu/find_rooms">문제 list</a></li>
-                    <li class="nav-item" class="dropdown-item"><a href="">문제 풀기</a></li>
-                    <li class="nav-item" class="dropdown-item"><a href="">결과</a></li>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <!-- <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+              </a> -->
+                <a class="nav-link" href="/">CO Love House</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/admins">관리자 페이지</a>
+                </li>
+            </div>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/room/find_rooms">방 찾기</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">공지사항</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item" class="dropdown-item"><a href="/notice/notices">공지사항</a></li>
+                        <li class="nav-item" class="dropdown-item"><a href="/notice/introductions">사이트 소개</a></li>
+                        <li class="nav-item" class="dropdown-item"><a href="/notice/faqs">FAQ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">커뮤니티</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item" class="dropdown-item"><a href="/community/communities">커뮤니티 소개</a></li>
+                        <li class="nav-item" class="dropdown-item"><a href="/community/promotions">프로모션</a></li>
+                        <li class="nav-item" class="dropdown-item"><a href="/community/moveinreviews">입주 후기</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login/logins">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mypage/mypages">마이페이지</a>
+                    </li>
                 </ul>
-            </li>
-        </ul>
+            </div>
+        </header>
         {% endblock %}
 
     </nav>

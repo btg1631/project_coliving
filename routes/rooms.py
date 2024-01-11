@@ -13,14 +13,6 @@ router = APIRouter()
 
 templates = Jinja2Templates(directory="templates/")
 
-@router.get("/communities", response_class=HTMLResponse)
-async def communities(request:Request):
-    return templates.TemplateResponse(name="menu/communities.html", context={'request':request})
-
 @router.get("/find_rooms", response_class=HTMLResponse) # 펑션 호출 방식
 async def find_rooms(request:Request):
-    return templates.TemplateResponse(name="menu/find_rooms.html", context={'request':request})
-
-@router.get("/notices", response_class=HTMLResponse)
-async def notices(request:Request):
-    return templates.TemplateResponse(name="menu/notices.html", context={'request':request})
+    return templates.TemplateResponse(name="room/find_rooms.html", context={'request':request})

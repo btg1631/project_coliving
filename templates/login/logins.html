@@ -1,0 +1,112 @@
+{% extends "main_template.html"%}
+
+{% block title %}
+로그인
+{% endblock %}
+
+{% block main_container %}
+<h2>로그인 페이지</h2>
+
+<!-- <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card text-center">
+            <div class="card-header">
+                일반 회원
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">일반 회원</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">로그인</a>
+                <a href="#" class="btn btn-primary">회원가입</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                2 days ago
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card text-center">
+            <div class="card-header">
+                기업 회원
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">기업 회원</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">로그인</a>
+                <a href="#" class="btn btn-primary">회원가입</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                2 days ago
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <h1 class="fw-bold mb-0 fs-2">일반 회원</h1>
+                    </div>
+
+                    <div class="modal-body p-5 pt-0">
+                        <form class="">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control rounded-3" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of
+                                use.</small>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <h1 class="fw-bold mb-0 fs-2">기업 회원</h1>
+                    </div>
+
+                    <div class="modal-body p-5 pt-0">
+                        <form class="">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control rounded-3" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" formaction="/" type="submit" >Sign
+                                up</button>
+                            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of
+                                use.</small>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

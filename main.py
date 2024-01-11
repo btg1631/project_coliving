@@ -20,8 +20,18 @@ app.add_middleware(
 )
 
 
-from routes.menu import router as menu_router
-app.include_router(menu_router, prefix="/menu")
+from routes.notices import router as notice_router
+app.include_router(notice_router, prefix="/notice")
+from routes.rooms import router as room_router
+app.include_router(room_router, prefix="/room")
+from routes.communities import router as community_router
+app.include_router(community_router, prefix="/community")
+from routes.admins import router as admin_router
+app.include_router(admin_router, prefix="/admin")
+from routes.logins import router as login_router
+app.include_router(login_router, prefix="/login")
+from routes.my_pages import router as mypage_router
+app.include_router(mypage_router, prefix="/mypage")
 
 from fastapi import Request
 from fastapi.templating import Jinja2Templates
@@ -34,3 +44,8 @@ async def root(request:Request):
     return templates.TemplateResponse("main.html"
                                       , {'request':request})
 
+@app.get("/enter")
+async def root(request:Request):
+
+    return templates.TemplateResponse("main_enter.html"
+                                      , {'request':request})
