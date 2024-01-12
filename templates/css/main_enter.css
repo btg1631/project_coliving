@@ -1,0 +1,17 @@
+.enter_main_image {
+    position: relative;
+    filter:brightness(30%)
+  }
+
+.enter_main_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    color: white;
+}
+
+.btn{
+    border-color: white;
+    color: white;
+}
