@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block main_container %}
-
 <div class="wrapper">
     <div class="title">
         <h1 style="font-size: 21px;">일반 회원가입</h1>
@@ -17,8 +16,8 @@
 
     <ul style="list-style : none;">
         <li>
-            <label for="account">아이디 또는 이메일</label>
-            <input type="text" id="account">
+            <label for="email">이메일</label>
+            <input type="text" id="email">
         </li>
         <li>
             <label for="password">비밀번호</label>
@@ -27,10 +26,6 @@
         <li>
             <label for="verify_password">비밀번호 확인</label>
             <input type="text" id="password">
-        </li>
-        <li>
-            <label for="email">이메일</label>
-            <input type="text" id="email">
         </li>
         <li>
             <label for="name">이름</label>
@@ -44,26 +39,13 @@
             <form>
                 <input type="button" value="약관동의" onclick="window.open(termsandconditions)">
             </form>
-             <!-- <label for="phonenumber">약관동의</label>
-            <input type="button" id="phonenumber"> -->
+        </li>
+        <li>
+            <form>
+                <input type="button" value="회원가입" onclick="window.open(joinmembership)">
+            </form>
         </li>
     </ul>
-
-     <!-- <div class="email">
-        <input id="email" type="text" placeholder="아이디 또는 이메일을 입력해 주세요.">
-        <div id="emailError" class="error"></div>
-
-        <input class="custom-email" disabled id="domain-input" />
-        <select id="domain-list" required>
-            <option disabled value="" selected>선택</option>
-            <option value="naver.com">naver.com</option>
-            <option value="hanmail.net">hanmail.net</option>
-            <option value="google.com">google.com</option>
-            <option value="nate.com">nate.com</option>
-            <option value="custom">직접 입력</option>
-        </select>
-    </div> -->
-
     {% endblock %}
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
