@@ -36,4 +36,15 @@ async def find_rooms(request:Request):
     return templates.TemplateResponse(name="room/find_rooms.html", context={'request':request,
                                                                             'search_dict':search_dict,
                                                                             'rooms':room_list})
-
+from beanie import PydanticObjectId
+# 방 세부내용(제목 데이터를 넘겨서 db와 일치시켜서 그 방에 대한 내용만 나오게..) 
+@router.get("/room_details/{object_id}")
+async def room_detail(request:Request, object_id:PydanticObjectId):
+    search_dict = dict(await request.form())
+    print(search_dict)
+    # 
+    room_list = await collection_rooms.get(object_id)
+    print(room_list)
+    return templates.TemplateResponse(name="room/room_details.html", context={'request':request,
+                                                                            'search_dict':search_dict,
+                                                                            'rooms':room_list})

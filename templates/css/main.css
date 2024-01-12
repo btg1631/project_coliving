@@ -63,3 +63,23 @@ hr {
   margin-top: 20px;
   margin-bottom: 80px;
 }
+
+
+/* find_rooms */
+.find_rooms {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.room_details {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* room_details */
+.tab-btn-list { 
+  text-align: center;
+}
+.tab-btn { 
+  display:inline-block
+}
+
