@@ -9,6 +9,11 @@ router = APIRouter()
 templates = Jinja2Templates(directory="templates/")
 
 #기업 매물등록
-@router.get("/enter",response_class=HTMLResponse)
+@router.get("/enter_regist",response_class=HTMLResponse)
 async def enter(request:Request):
-    return templates.TemplateResponse(name="enter/enter.html",context={'reqeust':request})
+    return templates.TemplateResponse(name="enter/enter_regist.html",context={'reqeust':request})
+
+#기업 관리자페이지
+@router.get("/enter_manage",response_class=HTMLResponse)
+async def enter(request:Request):
+    return templates.TemplateResponse(name="enter/enter_manage.html",context={'reqeust':request})

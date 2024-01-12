@@ -32,6 +32,8 @@ from routes.logins import router as login_router
 app.include_router(login_router, prefix="/login")
 from routes.my_pages import router as mypage_router
 app.include_router(mypage_router, prefix="/mypage")
+from routes.enters import router as enter_router
+app.include_router(enter_router,prefix="/enter")
 
 from fastapi import Request
 from fastapi.templating import Jinja2Templates
