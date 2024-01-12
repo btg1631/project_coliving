@@ -63,12 +63,12 @@ async def root(request:Request):
 @app.get("/enter")
 async def root(request:Request):
 
-    return templates.TemplateResponse("enter/main_enter.html"
+    return templates.TemplateResponse("enter/main_enters.html"
                                       , {'request':request})
 
 @app.post("/enter")
 async def root(request:Request):
     user_dict = dict(await request.form())
     print(user_dict)
-    return templates.TemplateResponse("enter/main_enter.html"
+    return templates.TemplateResponse("enter/main_enters.html"
                                       , {'request':request})
