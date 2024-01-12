@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main_container %}
-
+<div class="container" >
 <!-- main 상단 부분 -->
 <section class="py-5 text-center ">
-    <img class="main_image" src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642038227.jpg"
+    <img class="main_image" src="/images/편안한집2.png"
         width="100%" height="600px" />
     <div class="row py-lg-5">
         <div class="main_image_text col-lg-6 col-md-8 mx-auto">
@@ -21,6 +21,7 @@
     <!-- <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642037954.png" width="100%" height="200px"/> -->
 </section>
 
+<h1>검색해보세요^^</h1>
 <!-- 검색 부분 -->
 <form action="">
     <div class="search_box">
@@ -50,7 +51,7 @@
                 <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search">
             </div>
             <div class="col-1">
-                <button type="submit" class="searchbutton btn btn-outline-primary" formaction="/room/find_rooms"
+                <button type="submit"  class="searchbutton btn btn-outline-primary" formaction="/room/find_rooms"
                     formmethod="post">검색</button>
             </div>
         </div>
@@ -62,127 +63,28 @@
 <div class="album py-3 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card shadow-sm">
-                    <a href="">
-                        <div class="card-img-top">
-                            <img class="roomimg"
-                                src="https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg" />
-                        </div>
-                        <div class="card-body">
-                            <p class="title">맹그로브 고성 Stay Double</p>
-                            <p class="card-text">온전한 휴식을 누리고 깊이 몰입하기 좋은 더블룸</p>
-                            <div class="d-flex justify-content-between align-items-center">
+            {% for room in rooms %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <a href="">
+                            <div class="card-img-top">
+                                <img class="roomimg"
+                                    src="{{ room.image }}" >
+                            </div>
+                            <div class="card-body">
+                                <span class="brand">{{ room.brand }}</span>
+                                <span class="local">{{ room.local }}</span>
+                                <span class="title">{{ room.title }}</span>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
                                 </div>
-                                <small class="text-body-secondary">9 mins</small>
+                            </span>
+                            <p class="room_type">{{ room.room_type }}</p>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <a href="">
-                        <div class="card-img-top">
-                            <img class="roomimg"
-                                src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg" />
-                        </div>
-                        <div class="card-body">
-                            <p class="title">맹그로브 동대문 Dormitory</p>
-                            <p class="card-text">6인실/단독 화장실 2개/월 39만원부터(1인)</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                </div>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <a href="">
-                        <div class="card-img-top">
-                            <img class="roomimg"
-                                src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_44.jpg" />
-                        </div>
-                        <div class="card-body">
-                            <p class="title">맹그로브 고성 Stay Double</p>
-                            <p class="card-text">온전한 휴식을 누리고 깊이 몰입하기 좋은 더블룸</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                </div>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <a href="">
-                        <div class="card-img-top">
-                            <img class="roomimg"
-                                src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_49.jpg" />
-                        </div>
-                        <div class="card-body">
-                            <p class="title">커먼타운 신도림 Type A</p>
-                            <p class="card-text">아름다운 경치가 반겨주는 신도림081에서 만들어갈 멤버들의 커먼타운 라이프가 기대되는 하우스</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                </div>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <a href="">
-                        <div class="card-img-top">
-                            <img class="roomimg"
-                                src="https://mangrove.city/wp-content/uploads/2021/04/20210722_073041.jpg" />
-                        </div>
-                        <div class="card-body">
-                            <p class="title">맹그로브 신설 Buddy</p>
-                            <p class="card-text">2인실/단독 화장실, 욕조/월 54만원부터(1인)</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                </div>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <a href="">
-                        <div class="card-img-top">
-                            <img class="roomimg"
-                                src="https://mangrove.city/wp-content/uploads/2021/04/20210722_073137.jpg" />
-                        </div>
-                        <div class="card-body">
-                            <p class="title">맹그로브 신설 Bunk</p>
-                            <p class="card-text">2인실/단독 화장실, 욕조/월 54만원부터(1인)</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                </div>
-                                <small class="text-body-secondary">9 mins</small>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -194,6 +96,7 @@
     <div class="col-8"></div>
     <button class="col-1 btn btn-outline-primary" formaction="/community/moveinreviews">더보기</button>
 </form>
+
 
 <div class="residency_review row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <div class="col-md-3">
@@ -240,5 +143,6 @@
             </div>
         </a>
     </div>
+</div>
 </div>
 {% endblock %}
