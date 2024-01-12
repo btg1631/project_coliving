@@ -35,6 +35,8 @@ app.include_router(mypage_router, prefix="/mypage")
 
 from fastapi import Request
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+app.mount("/css", StaticFiles(directory="templates\\css\\"), name="static_css")
 
 # html 틀이 있는 폴더 위치
 templates = Jinja2Templates(directory = "templates/")
