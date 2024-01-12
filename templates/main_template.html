@@ -10,6 +10,7 @@
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="\css\main.css" >
+    <link rel="stylesheet" href="\css\find_rooms.css" >
     <!-- <link rel="stylesheet" href="\css\commons.css" > -->
 </head>
 
@@ -50,8 +51,6 @@
                 </li>
             </ul>
 
-
-
             <div class="col-md-3 text-end">
                 <form action="/login/logins" method="get">
                     <button type="submit" class="btn btn-outline-primary me-2">Login</button>
@@ -66,11 +65,11 @@
         {% endblock %}
 
     </nav>
-    <main class="container">
+    <main>
         {% block main_container %}
         {% endblock %}
     </main>
-    <footer class="container">
+    <footer>
         {% block footer %}
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">

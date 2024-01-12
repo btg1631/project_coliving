@@ -37,20 +37,26 @@ from fastapi import Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 app.mount("/css", StaticFiles(directory="templates/css"), name="static_css")
+app.mount("/images", StaticFiles(directory="images"), name="static_img")
+
+from databases.connections import Database
+from models.rooms import ROOM_DATA
+collection_rooms = Database(ROOM_DATA)
 
 # html 틀이 있는 폴더 위치
 templates = Jinja2Templates(directory = "templates/")
 @app.get("/")
 async def root(request:Request):
-
-    return templates.TemplateResponse("main.html"
-                                      , {'request':request})
+    room_list = await collection_rooms.get_all()
+    return templates.TemplateResponse(name="main.html"
+                                      , context={'request':request, 'rooms':room_list})
 @app.post("/")
 async def root(request:Request):
     user_dict = dict(await request.form())
     print(user_dict)
     return templates.TemplateResponse("main.html"
                                       , {'request':request})
+
 
 @app.get("/enter")
 async def root(request:Request):

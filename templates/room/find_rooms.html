@@ -4,61 +4,179 @@
 방 찾기
 {% endblock %}
 
-{% block main_container %}
-<div class="row">
-    <!-- 방 찾기 부분 -->
-    <div class="col-6">
+{% block nav_container %}
+<nav class="find_rooms">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+            <!-- <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a> -->
+            <a class="nav-link" href="/">CO Love House</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/admins">관리자 페이지</a>
+            </li>
+        </div>
 
-        <!-- 검색 부분 -->
-        <form action="">
-            <div class="search_rooms_box">
-                <div class="search_rooms row">
-                    <div class="col-2">
-                        <select class="form-control" name="room_type">
-                            <option value="none" {{ 'selected' if search_dict.room_type=='none' else '' }}>룸 형태
-                            </option>
-                            <option value="single" {{ 'selected' if search_dict.room_type=='single' else '' }}>1인실
-                            </option>
-                            <option value="double" {{ 'selected' if search_dict.room_type=='double' else '' }}>2인실
-                            </option>
-                            <option value="dormitory" {{ 'selected' if search_dict.room_type=='dormitory' else '' }}>
-                                다인실</option>
-                        </select>
-                    </div>
-                    <div class="col-2">
-                        <select class="form-control" name="room_size">
-                            <option value="none" {{ 'selected' if search_dict.room_size=='none' else '' }}>평수</option>
-                            <option value="7_square" {{ 'selected' if search_dict.room_size=='7_square' else '' }}>7평
-                            </option>
-                            <option value="14_square" {{ 'selected' if search_dict.room_size=='14_square' else '' }}>14평
-                            </option>
-                            <option value="15_square" {{ 'selected' if search_dict.room_size=='15_square' else '' }}>
-                                15평 이상</option>
-                        </select>
-                    </div>
-                    <div class="col-6">
-                        <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search"
-                            value="{{search_dict.search}}">
-                    </div>
-                    <div class="col-2">
-                        <button type="submit" class="searchbutton btn btn-outline-primary" formaction="/room/find_rooms"
-                            formmethod="post">검색</button>
-                    </div>
-                </div>
-            </div>
-        </form>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link"  href="/room/find_rooms">방 찾기</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">공지사항</a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item" class="dropdown-item"><a href="/notice/notices">공지사항</a></li>
+                    <li class="nav-item" class="dropdown-item"><a href="/notice/introductions">사이트 소개</a></li>
+                    <li class="nav-item" class="dropdown-item"><a href="/notice/faqs">FAQ</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">커뮤니티</a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item" class="dropdown-item"><a href="/community/communities">커뮤니티 소개</a></li>
+                    <li class="nav-item" class="dropdown-item"><a href="/community/promotions">프로모션</a></li>
+                    <li class="nav-item" class="dropdown-item"><a href="/community/moveinreviews">입주 후기</a></li>
+                </ul>
+            </li>
+        </ul>
 
-        <!-- 방 나열 부분 -->
-
-        
-    </div>
-
-
-    <!-- 지도 부분 -->
-    <div class="col-6">
-
-    </div>
-</div>
-
+        <div class="col-md-3 text-end">
+            <form action="/login/logins" method="get">
+                <button type="submit" class="btn btn-outline-primary me-2">Login</button>
+            </form>
+            <!-- <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="/mypage/mypages">마이페이지</a>
+                </li>
+            </ul> -->
+        </div>
+    </header>
 {% endblock %}
 
+{% block main_container %}
+<main class="find_rooms">
+    <div class="row">
+        <!-- 방 찾기 부분 -->
+        <div class="col-6">
+            <!-- 검색 부분 -->
+            <form action="">
+                <div class="search_rooms_box">
+                    <div class="search_rooms row">
+                        <div class="col-2">
+                            <select class="form-control" name="room_type">
+                                <option value="none" {{ 'selected' if search_dict.room_type=='none' else '' }}>룸 형태
+                                </option>
+                                <option value="single" {{ 'selected' if search_dict.room_type=='single' else '' }}>1인실
+                                </option>
+                                <option value="double" {{ 'selected' if search_dict.room_type=='double' else '' }}>2인실
+                                </option>
+                                <option value="dormitory" {{ 'selected' if search_dict.room_type=='dormitory' else ''
+                                    }}>
+                                    다인실</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <select class="form-control" name="room_size">
+                                <option value="none" {{ 'selected' if search_dict.room_size=='none' else '' }}>평수
+                                </option>
+                                <option value="7_square" {{ 'selected' if search_dict.room_size=='7_square' else '' }}>
+                                    7평
+                                </option>
+                                <option value="14_square" {{ 'selected' if search_dict.room_size=='14_square' else ''
+                                    }}>14평
+                                </option>
+                                <option value="15_square" {{ 'selected' if search_dict.room_size=='15_square' else ''
+                                    }}>
+                                    15평 이상</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search"
+                                value="{{search_dict.search}}">
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="searchbutton btn btn-outline-primary"
+                                formaction="/room/find_rooms" formmethod="post">검색</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- 방 나열 부분 -->
+            <div class="album py-3 bg-body-tertiary">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <a href="">
+                                    <div class="card-img-top">
+                                        <img class="roomimg"
+                                            src="https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg" />
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="brand">맹그로브</span>
+                                        <span class="local">고성</span>
+                                        <span class="title">Stay Double</span>
+                                        <span class="favorite">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
+                                            </div>
+                                        </span>
+                                        <p class="room_type">1-2인실</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <a href="">
+                                    <div class="card-img-top">
+                                        <img class="roomimg"
+                                            src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg" />
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="brand">맹그로브</span>
+                                        <span class="local">동대문</span>
+                                        <span class="title">Dormitory</span>
+                                        <span class="favorite">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
+                                            </div>
+                                        </span>
+                                        <p class="room_type">6인실</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <a href="">
+                                    <div class="card-img-top">
+                                        <img class="roomimg"
+                                            src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_44.jpg" />
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="brand">맹그로브</span>
+                                        <span class="local">고성</span>
+                                        <span class="title">Stay Double</span>
+                                        <span class="favorite">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
+                                            </div>
+                                        </span>
+                                        <p class="room_type">1인실</p>
+                                        
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- 지도 부분 -->
+        <div class="col-6">
+
+        </div>
+    </div>
+
+    {% endblock %}
