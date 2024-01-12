@@ -5,6 +5,60 @@
 {% endblock %}
 
 {% block main_container %}
-<h2>방 찾기</h2>
+<div class="row">
+    <!-- 방 찾기 부분 -->
+    <div class="col-6">
+
+        <!-- 검색 부분 -->
+        <form action="">
+            <div class="search_rooms_box">
+                <div class="search_rooms row">
+                    <div class="col-2">
+                        <select class="form-control" name="room_type">
+                            <option value="none" {{ 'selected' if search_dict.room_type=='none' else '' }}>룸 형태
+                            </option>
+                            <option value="single" {{ 'selected' if search_dict.room_type=='single' else '' }}>1인실
+                            </option>
+                            <option value="double" {{ 'selected' if search_dict.room_type=='double' else '' }}>2인실
+                            </option>
+                            <option value="dormitory" {{ 'selected' if search_dict.room_type=='dormitory' else '' }}>
+                                다인실</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <select class="form-control" name="room_size">
+                            <option value="none" {{ 'selected' if search_dict.room_size=='none' else '' }}>평수</option>
+                            <option value="7_square" {{ 'selected' if search_dict.room_size=='7_square' else '' }}>7평
+                            </option>
+                            <option value="14_square" {{ 'selected' if search_dict.room_size=='14_square' else '' }}>14평
+                            </option>
+                            <option value="15_square" {{ 'selected' if search_dict.room_size=='15_square' else '' }}>
+                                15평 이상</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search"
+                            value="{{search_dict.search}}">
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="searchbutton btn btn-outline-primary" formaction="/room/find_rooms"
+                            formmethod="post">검색</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- 방 나열 부분 -->
+
+        
+    </div>
+
+
+    <!-- 지도 부분 -->
+    <div class="col-6">
+
+    </div>
+</div>
+
 {% endblock %}
 

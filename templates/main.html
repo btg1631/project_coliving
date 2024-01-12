@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block main_container %}
-<section class="py-5 text-center container">
+
+<!-- main 상단 부분 -->
+<section class="py-5 text-center ">
     <img class="main_image" src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642038227.jpg"
         width="100%" height="600px" />
     <div class="row py-lg-5">
@@ -19,34 +21,43 @@
     <!-- <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642037954.png" width="100%" height="200px"/> -->
 </section>
 
+<!-- 검색 부분 -->
 <form action="">
-    <div class="search row">
-        <div class="col-1">
-            <select class="form-control" name="room_type">
-                <option value="none" {{ 'selected' if request._query_params.room_type=='none' else '' }}>룸 형태</option>
-                <option value="single" {{ 'selected' if request._query_params.room_type=='single' else '' }}>1인실</option>
-                <option value="double" {{ 'selected' if request._query_params.room_type=='double' else '' }}>2인실</option>
-                <option value="dormitory" {{ 'selected' if request._query_params.room_type=='dormitory' else '' }}>다인실</option>
-            </select>
-        </div>
-        <div class="col-1">
-            <select class="form-control" name="room_type">
-                <option value="none" {{ 'selected' if request._query_params.room_type=='none' else '' }}>룸 형태</option>
-                <option value="single" {{ 'selected' if request._query_params.room_type=='single' else '' }}>1인실</option>
-                <option value="double" {{ 'selected' if request._query_params.room_type=='double' else '' }}>2인실</option>
-                <option value="dormitory" {{ 'selected' if request._query_params.room_type=='dormitory' else '' }}>다인실</option>
-            </select>
-        </div>
-        <div class="col-6">
-            <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search" value="{{request._query_params.word}}">
-        </div>
-        <div class="col-4">
-            <button type="submit" class="searchbutton btn btn-outline-primary" formaction="/room/find_rooms" formmethod="post">검색</button>
-
+    <div class="search_box">
+        <div class="search row">
+            <div class="col-2">
+                <select class="form-control" name="room_type">
+                    <option value="none">룸 형태
+                    </option>
+                    <option value="single">1인실
+                    </option>
+                    <option value="double">2인실
+                    </option>
+                    <option value="dormitory">다인실</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <select class="form-control" name="room_size">
+                    <option value="none">평수</option>
+                    <option value="7_square">7평
+                    </option>
+                    <option value="14_square">14평
+                    </option>
+                    <option value="15_square">15평 이상</option>
+                </select>
+            </div>
+            <div class="col-7">
+                <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search">
+            </div>
+            <div class="col-1">
+                <button type="submit" class="searchbutton btn btn-outline-primary" formaction="/room/find_rooms"
+                    formmethod="post">검색</button>
+            </div>
         </div>
     </div>
 </form>
 
+<!-- 추천 rooms 부분 -->
 <h2>추천 rooms</h2>
 <div class="album py-3 bg-body-tertiary">
     <div class="container">
@@ -54,10 +65,10 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="">
-                        <svg class="card-img-top" width="100%" height="0">
-                            <img src="https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg"
-                                width="100%" height="100%" />
-                        </svg>
+                        <div class="card-img-top">
+                            <img class="roomimg"
+                                src="https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg" />
+                        </div>
                         <div class="card-body">
                             <p class="title">맹그로브 고성 Stay Double</p>
                             <p class="card-text">온전한 휴식을 누리고 깊이 몰입하기 좋은 더블룸</p>
@@ -74,10 +85,10 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="">
-                        <svg class="card-img-top" width="100%" height="0">
-                            <img src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg"
-                                width="100%" height="100%" />
-                        </svg>
+                        <div class="card-img-top">
+                            <img class="roomimg"
+                                src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg" />
+                        </div>
                         <div class="card-body">
                             <p class="title">맹그로브 동대문 Dormitory</p>
                             <p class="card-text">6인실/단독 화장실 2개/월 39만원부터(1인)</p>
@@ -94,10 +105,10 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="">
-                        <svg class="card-img-top" width="100%" height="0">
-                            <img src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_44.jpg"
-                                width="100%" height="100%" />
-                        </svg>
+                        <div class="card-img-top">
+                            <img class="roomimg"
+                                src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_44.jpg" />
+                        </div>
                         <div class="card-body">
                             <p class="title">맹그로브 고성 Stay Double</p>
                             <p class="card-text">온전한 휴식을 누리고 깊이 몰입하기 좋은 더블룸</p>
@@ -115,10 +126,10 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="">
-                        <svg class="card-img-top" width="100%" height="0">
-                            <img src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_49.jpg"
-                                width="100%" height="100%" />
-                        </svg>
+                        <div class="card-img-top">
+                            <img class="roomimg"
+                                src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_49.jpg" />
+                        </div>
                         <div class="card-body">
                             <p class="title">커먼타운 신도림 Type A</p>
                             <p class="card-text">아름다운 경치가 반겨주는 신도림081에서 만들어갈 멤버들의 커먼타운 라이프가 기대되는 하우스</p>
@@ -135,10 +146,10 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="">
-                        <svg class="card-img-top" width="100%" height="0">
-                            <img src="https://mangrove.city/wp-content/uploads/2021/04/20210722_073041.jpg" width="100%"
-                                height="100%" />
-                        </svg>
+                        <div class="card-img-top">
+                            <img class="roomimg"
+                                src="https://mangrove.city/wp-content/uploads/2021/04/20210722_073041.jpg" />
+                        </div>
                         <div class="card-body">
                             <p class="title">맹그로브 신설 Buddy</p>
                             <p class="card-text">2인실/단독 화장실, 욕조/월 54만원부터(1인)</p>
@@ -155,10 +166,10 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <a href="">
-                        <svg class="card-img-top" width="100%" height="0">
-                            <img src="https://mangrove.city/wp-content/uploads/2021/04/20210722_073137.jpg" width="100%"
-                                height="100%" />
-                        </svg>
+                        <div class="card-img-top">
+                            <img class="roomimg"
+                                src="https://mangrove.city/wp-content/uploads/2021/04/20210722_073137.jpg" />
+                        </div>
                         <div class="card-body">
                             <p class="title">맹그로브 신설 Bunk</p>
                             <p class="card-text">2인실/단독 화장실, 욕조/월 54만원부터(1인)</p>
@@ -177,5 +188,57 @@
 </div>
 
 <hr>
+<!-- 입주 후기 부분 -->
+<form  class="row" action="">      
+    <h2 class="col-3">입주 후기</h2>
+    <div class="col-8"></div>
+    <button class="col-1 btn btn-outline-primary" formaction="/community/moveinreviews">더보기</button>
+</form>
 
+<div class="residency_review row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div class="col-md-3">
+        <a href="">
+            <div class="card">
+                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642561619.jpg"
+                    class="card-img-top" alt="사진">
+                <div class="card-body">
+                    <h5 class="card-title">코리빙하우스 플랫폼 lovehouse 너무 좋아요~</h5>
+                </div>
+            </div>            
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="">
+            <div class="card">
+                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1641781028.jpg"
+                    class="card-img-top" alt="사진">
+                <div class="card-body">
+                    <h5 class="card-title">코리빙하우스 생활 반년차 후기</h5>
+                </div>
+            </div>            
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="">
+            <div class="card">
+                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1641260264.jpg"
+                    class="card-img-top" alt="사진">
+                <div class="card-body">
+                    <h5 class="card-title">러브하우스 왕추천 입니다!</h5>
+                </div>
+            </div>            
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="">
+            <div class="card">
+                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642561619.jpg"
+                    class="card-img-top" alt="사진">
+                <div class="card-body">
+                    <h5 class="card-title">코리빙하우스에 입주하다!!</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
 {% endblock %}
