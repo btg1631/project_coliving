@@ -29,7 +29,7 @@ pass
 # 정보 회득
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-time.sleep(2)
+time.sleep(3)
 # 팝업창 닫기 버튼 클릭
 # body > div:nth-child(1) > main > div.fixed.left-1\/2.top-1\/2.z-\[106\].w-\[320px\].-translate-x-1\/2.-translate-y-1\/2.border.border-black.desktop\:max-h-\[447px\] > div > button:nth-child(2)
 close = browser.find_element(by=By.CSS_SELECTOR, value="div > button:nth-child(2)>span")
@@ -37,11 +37,24 @@ close.click()
 
 # 상품 하나 전체
 # body > div:nth-child(1) > main > section:nth-child(5) > div > div > div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div:nth-child(1)
-items = browser.find_elements(by=By.CSS_SELECTOR, value= "div:nth-child(1)")
+
+time.sleep(3)
+
 # items = browser2.find_elements(by=By.CSS_SELECTOR, value= "div:nth-child(1)")
-item = items[i]
-item.click()
-time.sleep(2)
+for x in range(1,4):
+    items = browser.find_elements(by=By.CSS_SELECTOR,value="div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div:nth-child({})".format(x))
+    element_item = browser.find_element(by=By.CSS_SELECTOR,value="h3.text-xl")
+    print(element_item)
+
+
+    # for i in range(len(items)):
+    #     # 
+        
+    #     title = element_item.text
+
+    # print("title : {}".format(title))
+
+    
 
 
 def connect_mongo() : 
