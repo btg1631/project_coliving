@@ -106,70 +106,29 @@
             <div class="album py-3 bg-body-tertiary">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <a href="">
-                                    <div class="card-img-top">
-                                        <img class="roomimg"
-                                            src="https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg" />
-                                    </div>
-                                    <div class="card-body">
-                                        <span class="brand">맹그로브</span>
-                                        <span class="local">고성</span>
-                                        <span class="title">Stay Double</span>
-                                        <span class="favorite">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                            </div>
-                                        </span>
-                                        <p class="room_type">1-2인실</p>
-                                    </div>
-                                </a>
+                        {% for room in rooms %}
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <a href="">
+                                        <div class="card-img-top">
+                                            <img class="roomimg"
+                                                src="{{ room.image }}">
+                                        </div>
+                                        <div class="card-body">
+                                            <span class="brand">{{ room.brand }}</span>
+                                            <span class="local">{{ room.local }}</span>
+                                            <span class="title">{{ room.title }}</span>
+                                            <span class="favorite">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
+                                                </div>
+                                            </span>
+                                            <p class="room_type">{{ room.room_type }}</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <a href="">
-                                    <div class="card-img-top">
-                                        <img class="roomimg"
-                                            src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg" />
-                                    </div>
-                                    <div class="card-body">
-                                        <span class="brand">맹그로브</span>
-                                        <span class="local">동대문</span>
-                                        <span class="title">Dormitory</span>
-                                        <span class="favorite">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                            </div>
-                                        </span>
-                                        <p class="room_type">6인실</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <a href="">
-                                    <div class="card-img-top">
-                                        <img class="roomimg"
-                                            src="https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_44.jpg" />
-                                    </div>
-                                    <div class="card-body">
-                                        <span class="brand">맹그로브</span>
-                                        <span class="local">고성</span>
-                                        <span class="title">Stay Double</span>
-                                        <span class="favorite">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
-                                            </div>
-                                        </span>
-                                        <p class="room_type">1인실</p>
-                                        
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
 
