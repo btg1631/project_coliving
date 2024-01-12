@@ -21,10 +21,20 @@
 
 <form action="">
     <div class="search row">
-        <div class="col-2">
-            <select class="form-control" name="key_name">
-                <option value="name" {{ 'selected' if request._query_params.key_name=='name' else '' }}>name</option>
-                <option value="email" {{ 'selected' if request._query_params.key_name=='email' else '' }}>email</option>
+        <div class="col-1">
+            <select class="form-control" name="room_type">
+                <option value="none" {{ 'selected' if request._query_params.room_type=='none' else '' }}>룸 형태</option>
+                <option value="single" {{ 'selected' if request._query_params.room_type=='single' else '' }}>1인실</option>
+                <option value="double" {{ 'selected' if request._query_params.room_type=='double' else '' }}>2인실</option>
+                <option value="dormitory" {{ 'selected' if request._query_params.room_type=='dormitory' else '' }}>다인실</option>
+            </select>
+        </div>
+        <div class="col-1">
+            <select class="form-control" name="room_type">
+                <option value="none" {{ 'selected' if request._query_params.room_type=='none' else '' }}>룸 형태</option>
+                <option value="single" {{ 'selected' if request._query_params.room_type=='single' else '' }}>1인실</option>
+                <option value="double" {{ 'selected' if request._query_params.room_type=='double' else '' }}>2인실</option>
+                <option value="dormitory" {{ 'selected' if request._query_params.room_type=='dormitory' else '' }}>다인실</option>
             </select>
         </div>
         <div class="col-6">
