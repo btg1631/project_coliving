@@ -1,3 +1,9 @@
+.main_title {
+  background-color: rgba(138, 138, 138, 0.5);
+}
+.lead {
+  background-color: rgba(240, 240, 240, 0.5);
+}
 .search {
   height: 90px;
   margin-left: 5%;
@@ -24,6 +30,7 @@
   margin: 0;
 }
 
+
 hr {
   margin-top: 80px;
   margin-bottom: 100px;
@@ -41,7 +48,6 @@ hr {
   left: 50%;
   transform: translate( -50%, -50% );
   color: white;
-  background-color: rgba(128, 182, 189, 0.219);
 }
 
 .roomimg { 
