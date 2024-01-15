@@ -18,7 +18,7 @@ async def enter(request:Request):
 async def enter(request:Request):
     return templates.TemplateResponse(name="enter/enter_manages.html",context={'request':request})
 
-#메인페이지
-@router.post("/main_enters")
+#기업 메인페이지
+@router.get("/main_enters",response_class=HTMLResponse)
 async def enter(request:Request):
     return templates.TemplateResponse(name="enter/main_enters.html",context={'request':request})
