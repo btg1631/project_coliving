@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/main_enter.css">
 </head>
 <body>
+    <nav class="container">
     {% block nav_container %}
-        <nav class="container">
+       
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
                 <!-- <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -21,20 +22,19 @@
                 <a class="nav-link" href="/">CO Love House</a>
                
                 <li class="nav-item">
-                    <a class="nav-link" href="/enter/enter_regist">하우스 등록하기</a>
+                    <a class="nav-link" href="/enter/enter_regists">하우스 등록하기</a>
                 </li>
-               
-                <button class="btn" type="submit" href="/enter/enter_manage">마이 페이지</button>
-               
+                <form action="/enter/enter_manages">
+                    <button class="btn btn-outline-primary" type="submit">마이 페이지</button>
+                </form>
             </div>
         </nav>
     {% endblock %}
 
-    {% block main_container %}
-        <main class="container">
-            
-        </main>
-    {% endblock %}
+    <main class="container">
+        {% block main_container %}
+        {% endblock %}
+    </main>
 
     <footer class="container">
         {% block footer %}

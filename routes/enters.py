@@ -17,3 +17,8 @@ async def enter(request:Request):
 @router.get("/enter_manages",response_class=HTMLResponse)
 async def enter(request:Request):
     return templates.TemplateResponse(name="enter/enter_manages.html",context={'request':request})
+
+#메인페이지
+@router.post("/main_enters")
+async def enter(request:Request):
+    return templates.TemplateResponse(name="enter/main_enters.html",context={'request':request})
