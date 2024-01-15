@@ -8,9 +8,9 @@
 <div class="container">
     <h2>room details</h2>
     <!-- 제목 -->
-    <span class="room_details brand">{{ rooms.brand }} </span>
-    <span class="room_details local">{{ rooms.local }} </span>
-    <span class="room_details title">{{ rooms.title }}</span>
+    <span class="room_details brand">{{ rooms.room_brand }} </span>
+    <span class="room_details local">{{ rooms.room_local }} </span>
+    <span class="room_details title">{{ rooms.room_title }}</span>
 
     <!-- 이미지 슬라이드 -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -24,13 +24,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ rooms.image }}" class="d-block w-100" alt="...">
+                <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ rooms.image }}" class="d-block w-100" alt="...">
+                <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ rooms.image }}" class="d-block w-100" alt="...">
+                <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -53,11 +53,13 @@
         <div class="tab-btn" style="display:inline-block">투어하기</div>
     </div>
     <!-- 내용 -->
-    <div class="tab-list">
-        {{ rooms.text }}
+    <div class="tab-list text-center">
+        <div> 지점 소개 </div>
+        <div>{{ rooms.room_text }}</div>
+        <div> 상세 정보 </div>
+        <div >{{ rooms.room_text }}</div>
+        <div> 위치 및 교통 </div>
+        <img src="/images/map.PNG" alt="">
     </div>
-
 </div>
-
-
 {% endblock %}
