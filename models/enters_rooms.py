@@ -13,5 +13,5 @@ class Enter(Document):
     text : Optional[str] = None
   
     class Settings:
-        name = "enters"
+        name = "ENTERS_ROOMS_DATA"
 
