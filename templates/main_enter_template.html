@@ -11,24 +11,46 @@
     <link rel="stylesheet" href="css/main_enter.css">
 </head>
 <body>
-    <nav class="container">
     {% block nav_container %}
+    <nav class="container">
+    
        
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
+        <header>
+            <div class="justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <!-- <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
                 <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
               </a> -->
-                <a class="nav-link" href="/">CO Love House</a>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="/enter/enter_regists">하우스 등록하기</a>
-                </li>
-                <form action="/enter/enter_manages">
-                    <button class="btn btn-primary" type="submit">마이 페이지</button>
-                </form>
+              
+                <nav class="">
+                    <ul class="nav col-12 col-md-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/enter" >COEnter Love House</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/" >CO Love House</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">하우스 관리</a>                    
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/enter/enter_regists">하우스 등록하기</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-end mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/enter/enter_manages">마이 페이지</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">로그아웃</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </header>
+    </nav>
     {% endblock %}
 
     <main class="container">
