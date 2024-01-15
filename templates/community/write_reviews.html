@@ -1,0 +1,28 @@
+{% extends "main_template.html"%}
+
+{% block title %}
+글쓰기
+{% endblock %}
+
+{% block main_container %}
+<div class="container" >
+<h2>글쓰기</h2>
+<div>
+    <form action="">
+        <div>
+            <textarea name="review_title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required
+            ></textarea>
+        </div>
+        <div>
+            <textarea name="review_content" id="ucontent" placeholder="내용" required
+            ></textarea>
+        </div>
+          <!-- <input type="file" name="SelectFile" /> -->
+        <div>
+            <button type="submit" class="searchbutton btn btn-outline-primary" formmethod="post" formaction="/community/writereviewend">글 작성</button>
+        </div>
+    </form>
+</div>
+
+</div>
+{% endblock %}
