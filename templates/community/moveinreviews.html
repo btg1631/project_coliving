@@ -5,6 +5,52 @@
 {% endblock %}
 
 {% block main_container %}
-<h2>입주 후기</h2>
+<div class="container" >
+<h2>입주 후기</h2>    
+
+<div class="row">
+    <div class="col-7">
+        <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search">
+    </div>
+    <div class="col-2">
+        <form action="/community/searchreviewdetails" method="post">
+            <button type="submit" class="searchbutton btn btn-outline-primary">
+                검색</button>            
+        </form>
+    </div>
+    <div class="col-3">
+        <form action="/community/writereview" method="get">
+            <button type="submit" class="searchbutton btn btn-outline-primary">
+                글쓰기</button>
+        </form>
+    </div>
+</div>
+
+<!-- 검색 항목 추가 필요 -->
+<form action="">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>No. </th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>댓글수</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td>{{ loop.revindex0+1 }}</td>
+                <td><a href="/community/reviewdetails/{{review.id}}">{{ review.review_title}}</a></td>
+                <td>영지</td>
+                <td>24/01/14</td>
+                <td>1</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+</div>
 {% endblock %}
 

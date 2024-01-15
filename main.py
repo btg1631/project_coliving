@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from beanie import init_beanie
 
 app = FastAPI()
 
