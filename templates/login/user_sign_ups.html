@@ -19,11 +19,11 @@
         <ul style="list-style : none;">
             <li>
                 <label for="email">이메일</label>
-                <input type="text" id="email" name="email">
+                <input type="text" id="email" name="email" required>
             </li>
             <li>
                 <label for="password">비밀번호</label>
-                <input type="text" id="password" name="password">
+                <input type="text" id="password" name="password" required>
             </li>
             <!-- <li>
                 <label for="verify_password">비밀번호 확인</label>
@@ -31,11 +31,11 @@
             </li> -->
             <li>
                 <label for="name">이름</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" required>
             </li>
             <li>
                 <label for="phonenumber">휴대폰번호</label>
-                <input type="text" id="phonenumber" name="phonenumber">
+                <input type="text" id="phonenumber" name="phonenumber" required>
             </li>
             <input type="button" value="약관동의" onclick="window.open(termsandconditions)">
             <button type="submit" value="회원가입" formaction="/login/logins" formmethod="post">회원가입</button>

@@ -1,6 +1,6 @@
 [
-    {"brand": "맹그로브", "local": "고성", "title": "Stay Double", "image":"https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg", "room_type": "1인실", "room_size": "7평", "text": "온전한 휴식을 누리고 깊이 몰입하기 좋은 더블룸"},
-    {"brand": "맹그로브", "local": "동대문", "title": "Dormitory", "image":"https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg", "room_type": "6인실", "room_size": "15평 이상", "text": "6인실/단독 화장실 2개/월 39만원부터(1인)"},
-    {"brand": "맹그로브", "local": "신설", "title": "Bunk", "image":"https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_49.jpg", "room_type": "2인실", "room_size": "14평", "text": "2인실/단독 화장실, 욕조/월 54만원부터(1인)"},
-    {"brand": "맹그로브", "local": "신설", "title": "Buddy", "image":"https://mangrove.city/wp-content/uploads/2021/04/20210722_073041.jpg", "room_type": "2인실", "room_size": "14평", "text": "2인실/단독 화장실, 욕조/월 54만원부터(1인)"}
+    {"room_brand": "맹그로브", "room_local": "고성", "room_title": "Stay Double", "room_image":"https://mangrove.city/wp-content/uploads/2023/03/230330-Mangrove-Goseong_30-2048x1365.jpg", "room_type": "1인실", "room_size": "7평", "room_text": "온전한 휴식을 누리고 깊이 몰입하기 좋은 더블룸"},
+    {"room_brand": "맹그로브", "room_local": "동대문", "room_title": "Dormitory", "room_image":"https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_51.jpg", "room_type": "6인실", "room_size": "15평 이상", "room_text": "6인실/단독 화장실 2개/월 39만원부터(1인)"},
+    {"room_brand": "맹그로브", "room_local": "신설", "room_title": "Bunk", "room_image":"https://mangrove.city/wp-content/uploads/2022/08/220901-Mangrove-Dongdaemun_49.jpg", "room_type": "2인실", "room_size": "14평", "room_text": "2인실/단독 화장실, 욕조/월 54만원부터(1인)"},
+    {"room_brand": "맹그로브", "room_local": "신설", "room_title": "Buddy", "room_image":"https://mangrove.city/wp-content/uploads/2021/04/20210722_073041.jpg", "room_type": "2인실", "room_size": "14평", "room_text": "2인실/단독 화장실, 욕조/월 54만원부터(1인)"}
 ]

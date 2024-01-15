@@ -26,6 +26,16 @@
     <div class="search_box">
         <div class="search row">
             <div class="col-2">
+                <select class="form-control" name="room_brand">
+                    <option value="none">브랜드</option>
+                    <option value="dears">디어스</option>
+                    <option value="mangrove">맹그로브</option>
+                    <option value="hapoom">하품</option>
+                    <option value="commontown">커먼타운</option>
+                    <option value="episode">에피소드</option>
+                </select>
+            </div>
+            <div class="col-2">
                 <select class="form-control" name="room_type">
                     <option value="none">룸 형태
                     </option>
@@ -34,16 +44,6 @@
                     <option value="double">2인실
                     </option>
                     <option value="dormitory">다인실</option>
-                </select>
-            </div>
-            <div class="col-2">
-                <select class="form-control" name="room_size">
-                    <option value="none">평수</option>
-                    <option value="7_square">7평
-                    </option>
-                    <option value="14_square">14평
-                    </option>
-                    <option value="15_square">15평 이상</option>
                 </select>
             </div>
             <div class="col-7">
@@ -68,12 +68,12 @@
                         <a href="/room/room_details/{{room.id}}">
                             <div class="card-img-top">
                                 <img class="roomimg"
-                                    src="{{ room.image }}" >
+                                    src="{{ room.room_image }}" >
                             </div>
                             <div class="card-body">
-                                <span class="brand">{{ room.brand }}</span>
-                                <span class="local">{{ room.local }}</span>
-                                <span class="title">{{ room.title }}</span>
+                                <span class="brand">{{ room.room_brand }}</span>
+                                <span class="local">{{ room.room_local }}</span>
+                                <span class="title">{{ room.room_title }}</span>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
                                 </div>
@@ -98,11 +98,11 @@
 
 
 <div class="residency_review row row-cols-1 row-cols-sm-2 row-cols-md-4">
-    {% for room in rooms %}
+    {% for review in reviews %}
     <div class="col-md-3">
-        <a href="">
+        <a href="/community/reviewdetails/{{review.id}}">
             <div class="card">
-                <img src="{{ review.review_image }}"
+                <img src="/images/{{ review.review_image }}"
                     class="card-img-top" alt="사진">
                 <div class="card-body">
                     <h5 class="card-title">{{ review.review_title}}</h5>
