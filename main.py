@@ -44,15 +44,20 @@ app.mount("/images", StaticFiles(directory="images"), name="static_img")
 
 from databases.connections import Database
 from models.rooms import ROOM_DATA
+from models.reviews import REVIEW_DATA
 collection_rooms = Database(ROOM_DATA)
+collection_reviews = Database(REVIEW_DATA)
 
 # html 틀이 있는 폴더 위치
 templates = Jinja2Templates(directory = "templates/")
 @app.get("/")
 async def root(request:Request):
     room_list = await collection_rooms.get_all()
+    review_list = await collection_reviews.get_all()
     return templates.TemplateResponse(name="main.html"
-                                      , context={'request':request, 'rooms':room_list})
+                                      , context={'request':request,
+                                                  'rooms':room_list,
+                                                  'reviews':review_list})
 @app.post("/")
 async def root(request:Request):
     user_dict = dict(await request.form())
@@ -73,3 +78,9 @@ async def root(request:Request):
     print(user_dict)
     return templates.TemplateResponse("enter/main_enters.html"
                                       , {'request':request})
+
+
+
+# 코리빙하우스 생활 반년차 후기
+# 러브하우스 왕추천 입니다!
+# 코리빙하우스에 입주하다!!

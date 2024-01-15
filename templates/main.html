@@ -98,50 +98,19 @@
 
 
 <div class="residency_review row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    {% for room in rooms %}
     <div class="col-md-3">
         <a href="">
             <div class="card">
-                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642561619.jpg"
+                <img src="{{ review.review_image }}"
                     class="card-img-top" alt="사진">
                 <div class="card-body">
-                    <h5 class="card-title">코리빙하우스 플랫폼 lovehouse 너무 좋아요~</h5>
+                    <h5 class="card-title">{{ review.review_title}}</h5>
                 </div>
             </div>            
         </a>
     </div>
-    <div class="col-md-3">
-        <a href="">
-            <div class="card">
-                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1641781028.jpg"
-                    class="card-img-top" alt="사진">
-                <div class="card-body">
-                    <h5 class="card-title">코리빙하우스 생활 반년차 후기</h5>
-                </div>
-            </div>            
-        </a>
-    </div>
-    <div class="col-md-3">
-        <a href="">
-            <div class="card">
-                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1641260264.jpg"
-                    class="card-img-top" alt="사진">
-                <div class="card-body">
-                    <h5 class="card-title">러브하우스 왕추천 입니다!</h5>
-                </div>
-            </div>            
-        </a>
-    </div>
-    <div class="col-md-3">
-        <a href="">
-            <div class="card">
-                <img src="https://woozoo.s3.ap-northeast-2.amazonaws.com/uploads/image/data/tiny/1642561619.jpg"
-                    class="card-img-top" alt="사진">
-                <div class="card-body">
-                    <h5 class="card-title">코리빙하우스에 입주하다!!</h5>
-                </div>
-            </div>
-        </a>
-    </div>
+    {% endfor %}
 </div>
 </div>
 {% endblock %}

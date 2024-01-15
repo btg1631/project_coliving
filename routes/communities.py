@@ -54,8 +54,8 @@ async def writereviewend(request:Request):
     reviews = REVIEW_DATA(**review_dict)
     await collection_review.save(reviews)
 
-    review_list = await collection_review.get_all()
+    # review_list = await collection_review.get_all()
     return templates.TemplateResponse(name="community/review_details.html", context={'request':request,
-                                                                                    'reviews':review_list})
+                                                                                    'review':reviews})
 
 

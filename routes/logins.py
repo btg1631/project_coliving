@@ -4,10 +4,9 @@ from fastapi.templating import Jinja2Templates
 from fastapi import Request
 from beanie import init_beanie
 
-# from toy.databases.connections import Database
-
-# from toy.models.users import user
-# collection_user = Database(user)
+from databases.connections import Database
+from models.users import USER_DATA
+collection_user = Database(USER_DATA)
 
 router = APIRouter()
 
@@ -15,13 +14,24 @@ templates = Jinja2Templates(directory="templates/")
 
 
 @router.get("/logins", response_class=HTMLResponse)
-async def communities(request:Request):
+async def logins(request:Request):
+    return templates.TemplateResponse(name="login/logins.html", context={'request':request})
+
+# 로그인 정보 저장
+@router.post("/logins", response_class=HTMLResponse)
+async def logins(request:Request):
+    user_dict = dict(await request.form())
+    print(user_dict)
+    # 저장
+    users = USER_DATA(**user_dict)
+    await collection_user.save(users)
+
     return templates.TemplateResponse(name="login/logins.html", context={'request':request})
 
 @router.get("/usersignups", response_class=HTMLResponse)
-async def communities(request:Request):
+async def usersignups(request:Request):
     return templates.TemplateResponse(name="login/user_sign_ups.html", context={'request':request})
 
 @router.get("/entersignups", response_class=HTMLResponse)
-async def communities(request:Request):
+async def entersignups(request:Request):
     return templates.TemplateResponse(name="login/enter_sign_ups.html", context={'request':request})
