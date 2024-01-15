@@ -17,20 +17,20 @@
         </div>
         <div class = "row">
             <div class = "col-6">
-                <input type="text" class="form-control" placeholder="동 입력" id="" name="">
+                <input type="text" class="form-control" placeholder="동 입력" id="" name="dong_address">
             </div>
             <div class = "col-6">
-                <input type="text" class="form-control" placeholder="호 입력" id="" name="">
+                <input type="text" class="form-control" placeholder="호 입력" id="" name="ho_address">
             </div>
         </div>
         <div class = "row">
             <div class = "col-6 form-check">
                 <label class="form-check-label">동 구별 없음</label>
-                <input class="form-check-input" type="radio">
+                <input class="form-check-input" type="radio" name="dong_address">
             </div>
             <div class = "col-6 form-check">
                 <label class="form-check-label">호실 구별 없음</label>
-                <input class="form-check-input" type="radio">
+                <input class="form-check-input" type="radio" name="ho_address">
             </div>
         </div>
         <hr>
@@ -42,8 +42,11 @@
             <button class="btn btn-primary">매매</button>
         </div>
         <div class="row">
+            <!-- <div class = "col-6">
+                <input type="text" class="form-control" name="">
+            </div> -->
             <div class = "col-6">
-                <input type="text" class="form-control" placeholder="관리비" id="" name="">
+                <input type="text" class="form-control" placeholder="관리비" id="" name="price">
             </div>
         </div>
         <div class = "col-6 form-check">
@@ -59,10 +62,12 @@
         </div>
         <hr>
         <h3>상세정보</h3>
+        <!-- 방 갯수, 화장실 갯수, 전체 층, 해당층, 공급면적, 전용면적, 상세설명 -->
         <div class="">
+        
             
         </div>
-        <button class="btn btn-outline-primary" type="submit" formaction="/enter">완료</button>
+        <button class="btn btn-outline-primary" type="submit" formaction="/enter" formmethod="post">완료</button>
     </div>
 </form>
 
