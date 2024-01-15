@@ -79,8 +79,3 @@ async def root(request:Request):
     return templates.TemplateResponse("enter/main_enters.html"
                                       , {'request':request})
 
-
-
-# 코리빙하우스 생활 반년차 후기
-# 러브하우스 왕추천 입니다!
-# 코리빙하우스에 입주하다!!
