@@ -8,7 +8,7 @@ class ENTER_ROOMS_DATA(Document):
     address: Optional[str] = None
     dong_address : Optional[str] = None
     ho_address : Optional[str] = None
-    price: Optional[int] = None
+    price: Optional[str] = None
     # oner: Optional[str] = None
   
     class Settings:
