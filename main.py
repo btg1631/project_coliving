@@ -45,8 +45,11 @@ app.mount("/images", StaticFiles(directory="images"), name="static_img")
 from databases.connections import Database
 from models.rooms import ROOM_DATA
 from models.reviews import REVIEW_DATA
+from models.enters_rooms import ENTER_ROOMS_DATA
+
 collection_rooms = Database(ROOM_DATA)
 collection_reviews = Database(REVIEW_DATA)
+collection_room_regist = Database(ENTER_ROOMS_DATA)
 
 # html 틀이 있는 폴더 위치
 templates = Jinja2Templates(directory = "templates/")
@@ -76,6 +79,11 @@ async def root(request:Request):
 async def root(request:Request):
     user_dict = dict(await request.form())
     print(user_dict)
-    return templates.TemplateResponse("enter/main_enters.html"
-                                      , {'request':request})
+    regist_dict = dict(await request.form())
+    print(regist_dict)
+
+    # 저장
+    regist = ENTER_ROOMS_DATA(**regist_dict)
+    await collection_room_regist.save(regist)
+    return templates.TemplateResponse("enter/main_enters.html", {'request':request})
 

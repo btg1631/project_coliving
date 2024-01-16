@@ -36,4 +36,4 @@ async def enter_room_regist(request:Request):
     # 저장
     regist = ENTER_ROOMS_DATA(**regist_dict)
     await collection_room_regist.save(regist)
-    return templates.TemplateResponse(name="enter/enter_regists.html",context={'request':request,'regist':regist})
+    return templates.TemplateResponse(name="enter/main_enters.html",context={'request':request,'regist':regist})
