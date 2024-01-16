@@ -17,7 +17,8 @@
 
 ### 웹 스크래핑 대상
 ---
-- [디어스](https://dears.kr/ko)
+- [디어스 판교](https://dears.kr/ko)
+- [디어스 명동](https://www.dearsmd.com/)
 - [맹그로브](https://mangrove.city/)
 - [하품](https://www.hapoom.co/)
 - [커먼시티](https://www.commontown.co/ko)

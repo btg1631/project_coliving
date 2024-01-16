@@ -31,17 +31,13 @@ time.sleep(5)
 # 전체 상품 정보
 selector_value = "div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div"
 element_bundle = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value)
+selector_images = "div.carousel-root > div > div > ul > li:nth-child(2) > div"
+element_images = browser.find_elements(by=By.CSS_SELECTOR, value=selector_images)
 for element_item in element_bundle[0:4]:
-    try:
-    # dears 썸네일
-    # body > div:nth-child(1) > main > section:nth-child(5) > div > div > div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div:nth-child(1) > div.relative.border.border-slate-200
-        element_image = browser.find_element(by=By.CSS_SELECTOR, value="div:nth-child(1) > div.relative.border.border-slate-200")
+    for element_img in element_images[0:4]:    # 썸네일 이미지 4개 가져오기 범위 지정
+        element_image = browser.find_element(by=By.CSS_SELECTOR, value="li:nth-child(2) > div > img")
         image = element_image.get_attribute('src')
-        # selector_value_thumbnail = "div:nth-child(1) > div.relative.border.border-slate-200"
-        # element_thumbnail = element_item.find_element(by=By.CSS_SELECTOR, value=selector_value_thumbnail)
-        # thumbnail = element_thumbnail.text
-    except: 
-        image = "None"
+        pass
     time.sleep(2)
 
     # 상품 제목
@@ -130,8 +126,8 @@ for element_item in element_bundle[0:4]:
         reference = "None"
 
 
-    print("썸네일 : {}, 제목 : {}, 룸타입 : {}, 기타(시설,세대옵션) : {}, 거주인원/평수 : {}, 집 구성 : {}, 세대 추가 옵션 : {}, 기본 옵션 : {}, 월 이용 정상가 : {}, 월 이용 할인가 : {}, 비고 : {}".format(title, room_type, household_option, numberOfResidenceAndPy, house_composition, additional_option, basic_option, old_price, new_price, reference))
-    room_infor.insert_one({"썸네일" : image
+    print("썸네일 주소 : {}, 제목 : {}, 룸타입 : {}, 기타(시설,세대옵션) : {}, 거주인원/평수 : {}, 집 구성 : {}, 세대 추가 옵션 : {}, 기본 옵션 : {}, 월 이용 정상가 : {}, 월 이용 할인가 : {}, 비고 : {}".format(image, title, room_type, household_option, numberOfResidenceAndPy, house_composition, additional_option, basic_option, old_price, new_price, reference))
+    room_infor.insert_one({"썸네일 주소" : image
                             , "제목" : title
                             , "룸타입" : room_type
                             , "기타" : household_option

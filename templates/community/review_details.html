@@ -6,13 +6,35 @@
 
 {% block main_container %}
 <div class="container">
-<h2>입주후기 내용</h2>
-<div>{{review.review_title}}</div>
-<img src="/images/{{ review.review_image }}" alt="사진">
+<form action="">
+    <div>
+        <button type="submit" class="searchbutton btn btn-outline-primary"
+            formaction="/community/moveinreviews">돌아가기</button>
+    </div>
+</form>
+<div class="row">
+    <div class="col-11" style="font-size:40px; margin-bottom:15px;">{{review.review_title}}</div>
+    <form action="/community/delete_review/{{ review.id }}" class="col-1" method="get">
+        <button type="submit" class="btn btn-outline-danger">삭제</button>
+    </form>
+</div>
+
+<img style="width:600px; height:600px" src="/images/{{ review.review_image }}" alt="사진">
 <div>{{review.review_content}}</div>
 
 
 <!-- 댓글 기능 추가 -->
+<hr>
+<div class="card-footer">
+    <form onsubmit="addComment(event)">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="댓글을 입력하세요" required>
+        </div>
+        <button type="submit" class="btn btn-primary">작성</button>
+    </form>
+    <div class="comments mt-3">
+    </div>
+</div>
 
 </div>
 {% endblock %}

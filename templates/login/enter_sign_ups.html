@@ -5,51 +5,46 @@
 {% endblock %}
 
 {% block main_container %}
-<div class="container" >
-<div class="wrapper">
-    <div class="title">
-        <h1 style="font-size: 21px;">기업 회원가입</h1>
-    </div>
+<div class="container">
+    <div class="wrapper">
+        <form action="">
+            <div class="title">
+                <h1 style="font-size: 21px;">기업 회원가입</h1>
+            </div>
 
-    <ul style="list-style : none;">
-        <li>
-            <label for="email">이메일</label>
-            <input type="text" id="email" required>
-        </li>
-        <li>
-            <label for="password">비밀번호</label>
-            <input type="text" id="password" required>
-        </li>
-        <li>
+            <ul style="list-style : none;">
+                <li>
+                    <label for="email">이메일</label>
+                    <input type="text" id="email" name="email" required>
+                </li>
+                <li>
+                    <label for="password">비밀번호</label>
+                    <input type="text" id="password" name="password" required>
+                </li>
+                <!-- <li>
             <label for="verify_password">비밀번호 확인</label>
             <input type="text" id="password" required>
-        </li>
-        <li>
-            <label for="name">이름</label>
-            <input type="text" id="name" required>
-        </li>
-        <li>
-            <label for="phonenumber">휴대폰번호</label>
-            <input type="text" id="phonenumber" required>
-        </li>
-        <li>
-            <label for="registration_number">사업자등록번호</label>
-            <input type="text" id="registration_number" required>
-            <button id="checkButton">중복확인</button>
-            <p id="result"></p>
-        </li>
-        <li>
-            <form>
+        </li> -->
+                <li>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" required>
+                </li>
+                <li>
+                    <label for="phonenumber">휴대폰번호</label>
+                    <input type="text" id="phonenumber" name="phonenumber" required>
+                </li>
+                <li>
+                    <label for="enter_number">사업자등록번호</label>
+                    <input type="text" id="enter_number" name="enter_number" required>
+                    <button id="checkButton">중복확인</button>
+                    <p id="result"></p>
+                </li>
                 <input type="button" value="약관동의" onclick="window.open(termsandconditions)">
-            </form>
-        </li>
-        <li>
-            <form>
-                <input type="button" value="회원가입" onclick="window.open(joinmembership)">
-            </form>
-        </li>
-    </ul>
-</div>
+
+                <button type="submit" value="회원가입" formaction="/login/entersignups" formmethod="post">회원가입</button>
+            </ul>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
