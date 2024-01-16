@@ -18,41 +18,69 @@ room_infor = database['DEARS_MYEONGDONG']
 # Chrome WebDriver의 capabilities 속성 사용
 capabilities = browser.capabilities
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+# EC : EC는 Selenium WebDriver에서 제공하는 Expected Conditions의 약어로, WebDriver가 특정 조건이 충족될 때까지 대기하도록 설정하는 데 사용되는 조건들을 정의한 클래스이다.
+
 # - 주소 입력
 browser.get("https://www.dearsmd.com/")
 time.sleep(2)
 # 팝업 창(1,2,3) 닫기 버튼 클릭
 # body > div:nth-child(2) > form > span > a
-close = browser.find_element(by=By.CSS_SELECTOR, value="div:nth-child(2) > form > span > a")
-close.click()
-time.sleep(5)
+close_buttons = browser.find_elements(by=By.CSS_SELECTOR, value="div:nth-child(2) > form > span > a")
+for button in close_buttons:
+    button.click()
+    time.sleep(5)
 
 # - 정보 획득
 
 # 메뉴 - Rooms&Prices : #header > div.h_box.clearfix > ul > li:nth-child(3)
 selector_element = 'div.h_box.clearfix > ul > li:nth-child(3)'
+# 웹 요소가 클릭 가능할 때까지 기다리기
+# element_dears_menu = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector_element)))
+# WebDriverWait(browser, 10) : 최대 10초 동안 기다리도록 설정
+# EC.element_to_be_clickable((By.CSS_SELECTOR, selector_element)) : 선택한 웹 요소가 클릭 가능한 상태가 될 때까지 기다리도록 설정
 element_dears_menu = browser.find_element(by=By.CSS_SELECTOR, value=selector_element)
+time.sleep(1)
+# 웹 요소 클릭
 element_dears_menu.click()
-# index = [0, 1, 2]  # 법원 3개
-
+time.sleep(2)
 
 # 전체 상품 정보
-selector_value = "div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div"
+selector_value = "div.roomR.inlineB > ul > li:nth-child(1)"
 element_bundle = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value)
-for element_item in element_bundle[0:4]:
+# 썸네일 이미지
+selector_images = "ul > div.owl-stage-outer > div > div.owl-item.active > li"
+element_images = browser.find_elements(by=By.CSS_SELECTOR, value=selector_images)
+for element_item in element_bundle:
+    for element_img in element_images:
+        element_image = browser.find_element(by=By.CSS_SELECTOR, value="div.owl-item.active > li > img")
+        image = element_image.get_attribute('src')
+    pass
+    time.sleep(2)
     # 상품 제목
-    selector_value_title = "div.flex.items-center.gap-x-4 > h3"
+    selector_value_title = "div.room_text > strong"
     element_title = element_item.find_element(by=By.CSS_SELECTOR, value=selector_value_title)
     title = element_title.text
     time.sleep(2)
 
-    # # 방 구조 타입
-    # try:
-    #     selector_value_room_type = "div > span"
-    #     element_room_type = element_item.find_element(by=By.CSS_SELECTOR, value=selector_value_room_type)
-    #     room_type = element_room_type.text
-    # except: 
-    #     room_type = "None"
+    # contents (층수/뷰/방구성/면적)
+    #content > div.s_contents > div > div > div.roomR.inlineB > ul > li:nth-child(1) > div.room_text > p
+    try :
+        selector_value_contents = "li:nth-child(1) > div.room_text > p"
+        element_contents = element_item.find_element(by=By.CSS_SELECTOR, value=selector_value_contents)
+        contents = element_contents.text
+    except :
+        contents = "None"
+    for i in range(3) :
+        # Book Button  ** 투어하기가 아닌 숙박 예약 화면으로 넘어가기에, 구현할지 확인 필요
+        try:
+            element_click_book = browser.find_element(by=By.CSS_SELECTOR,value = "li:nth-child(1) > div.room_text > a.btn_f29.wid100") # Book 버튼 정보 추출
+            element_click_book.click()                                                                                                 # Book 버튼 클릭
+        except: 
+            break
+        time.sleep(3)
+        pass
 
     # # 기타(시설,세대옵션)
     # # body > div:nth-child(1) > main > section:nth-child(5) > div > div > div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div:nth-child(4) > div.mt-\[30px\].flex.flex-col.items-start.desktop\:mt-6 > div.mt-4.grid.gap-y-2.whitespace-pre-wrap.font-normal.leading-6.text-slate-800.desktop\:mt-5.desktop\:gap-y-2\.5.desktop\:text-lg > div > div

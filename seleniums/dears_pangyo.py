@@ -31,6 +31,7 @@ time.sleep(5)
 # 전체 상품 정보
 selector_value = "div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div"
 element_bundle = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value)
+# 썸네일 이미지
 selector_images = "div.carousel-root > div > div > ul > li:nth-child(2) > div"
 element_images = browser.find_elements(by=By.CSS_SELECTOR, value=selector_images)
 for element_item in element_bundle[0:4]:
