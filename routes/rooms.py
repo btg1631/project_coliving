@@ -18,26 +18,39 @@ collection_rooms = Database(ROOM_DATA)
 
 
 # 방 찾기
-@router.get("/find_rooms", response_class=HTMLResponse) # 펑션 호출 방식
+@router.get("/find_rooms", response_class=HTMLResponse)
 async def find_rooms(request:Request):
-    search_dict = {'room_type': 'none', 'room_size': 'none', 'search': ''}
+    search_dict = {'room_brand': 'none', 'room_type': 'none', 'search': ''}
     room_list = await collection_rooms.get_all()
     return templates.TemplateResponse(name="room/find_rooms.html", context={'request':request,
                                                                             'search_dict':search_dict,
                                                                             'rooms':room_list})
-
-# 방 찾기(검색 클릭시 선택한 옵션과 검색어에 대한 내용이 다음 페이지로 넘어가야함..) 
+import re
+# 방 찾기 (selcet 태그로 검색하기 추가)
 @router.post("/find_rooms")
 async def find_rooms(request:Request):
     search_dict = dict(await request.form())
     print(search_dict)
-    # 여기서 get_all 말고 search_dict에 대한 필터링이 되어서 get해야함!!
-    room_list = await collection_rooms.get_all()
+    conditions = {}
+    if search_dict['search'] != '':
+        regex_pattern = re.compile(search_dict['search'], re.IGNORECASE)
+        conditions['$or'] = [
+            {'room_brand': {'$regex': regex_pattern}},
+            {'room_local': {'$regex': regex_pattern}},
+            {'room_title': {'$regex': regex_pattern}}
+        ]
+
+    room_list = await collection_rooms.getsbyconditions(conditions)
+
+    message = "일치하는 검색 결과가 없습니다."
+
     return templates.TemplateResponse(name="room/find_rooms.html", context={'request':request,
                                                                             'search_dict':search_dict,
-                                                                            'rooms':room_list})
+                                                                            'rooms':room_list,
+                                                                            'message': message})
+
 from beanie import PydanticObjectId
-# 방 세부내용(제목 데이터를 넘겨서 db와 일치시켜서 그 방에 대한 내용만 나오게..) 
+# 방 세부내용
 @router.get("/room_details/{object_id}")
 async def room_detail(request:Request, object_id:PydanticObjectId):
     search_dict = dict(await request.form())

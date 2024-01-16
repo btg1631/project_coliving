@@ -37,12 +37,9 @@
             </div>
             <div class="col-2">
                 <select class="form-control" name="room_type">
-                    <option value="none">룸 형태
-                    </option>
-                    <option value="single">1인실
-                    </option>
-                    <option value="double">2인실
-                    </option>
+                    <option value="none">룸 형태</option>
+                    <option value="single">1인실</option>
+                    <option value="double">2인실</option>
                     <option value="dormitory">다인실</option>
                 </select>
             </div>
@@ -100,17 +97,18 @@
 <div class="residency_review row row-cols-1 row-cols-sm-2 row-cols-md-4">
     {% for review in reviews %}
     <div class="col-md-3">
-        <a href="/community/reviewdetails/{{review.id}}">
+        <a href="/community/reviewdetails/{{ review.id }}">
             <div class="card">
                 <img src="/images/{{ review.review_image }}"
                     class="card-img-top" alt="사진">
                 <div class="card-body">
-                    <h5 class="card-title">{{ review.review_title}}</h5>
+                    <h5 class="card-title">{{ review.review_title }}</h5>
                 </div>
             </div>            
         </a>
     </div>
     {% endfor %}
+    
 </div>
 </div>
 {% endblock %}
