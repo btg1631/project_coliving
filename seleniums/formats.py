@@ -55,8 +55,6 @@ for x in range(1,4):
     # print("title : {}".format(title))
 
     
-
-
 def connect_mongo() : 
     # mongodb compass 띄우기
     from pymongo import MongoClient
@@ -65,9 +63,9 @@ def connect_mongo() :
     # database 연결
     database = mongoClient["project_coliving"]
     # collection 작업
-    collection_infor = database['rooms_infor']
-    collection_infor.delete_many({})
-    return collection_infor
+    room_infor = database['ROOM_INFOR']
+    # room_infor.delete_many({})
+    return room_infor
 
 time.sleep(3)
 # iframe으로 전환(dears, mangrove)
@@ -113,8 +111,8 @@ for i in range(4):
         element_house_composition = ""
     try:
         # dears 세대 추가 옵션
-        # div:nth-child(3) > div.mt-\[30px\].flex.flex-col.items-start.desktop\:mt-6 > div.mb-6.grid.gap-y-2.desktop\:gap-y-2\.5 > div
-        element_additional_option = browser.find_element(by=By.CSS_SELECTOR,value = "div:nth-child(3) > div.mt-\[30px\].flex.flex-col.items-start.desktop\:mt-6 > div.mb-6.grid.gap-y-2.desktop\:gap-y-2\.5 > div")
+        # div:nth-child(2) > div.mt-\[30px\].flex.flex-col.items-start.desktop\:mt-6 > div.mb-6.grid.gap-y-2.desktop\:gap-y-2\.5 > div
+        element_additional_option = browser.find_element(by=By.CSS_SELECTOR,value = "div.mb-6.grid.gap-y-2.desktop\:gap-y-2\.5 > div")
     except NoSuchElementException:
         elemeelement_additional_optionnt_ = ""
     try:
@@ -162,9 +160,9 @@ for i in range(4):
 
     # pass
 
-    collection_infor = connect_mongo()
+    room_infor = connect_mongo()
 
-    collection_infor.insert_one({"dears 썸네일" : element_thumbnail_dears,
+    room_infor.insert_one({"dears 썸네일" : element_thumbnail_dears,
                                 "dears 방 이름" : element_room_name_dears,
                                 "dears 방 구조 타입" : element_room_type_dears,
                                 "dears 거주인원/평수" : element_numberOfResidenceAndPy,
