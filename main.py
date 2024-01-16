@@ -57,6 +57,7 @@ templates = Jinja2Templates(directory = "templates/")
 async def root(request:Request):
     room_list = await collection_rooms.get_all()
     review_list = await collection_reviews.get_all()
+    review_list = review_list[:4]
     return templates.TemplateResponse(name="main.html"
                                       , context={'request':request,
                                                   'rooms':room_list,
