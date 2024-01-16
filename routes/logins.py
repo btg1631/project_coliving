@@ -17,9 +17,13 @@ templates = Jinja2Templates(directory="templates/")
 async def logins(request:Request):
     return templates.TemplateResponse(name="login/logins.html", context={'request':request})
 
-# 로그인 정보 저장
-@router.post("/logins", response_class=HTMLResponse)
-async def logins(request:Request):
+@router.get("/usersignups", response_class=HTMLResponse)
+async def usersignups(request:Request):
+    return templates.TemplateResponse(name="login/user_sign_ups.html", context={'request':request})
+
+# 회원가입 정보 저장
+@router.post("/usersignups", response_class=HTMLResponse)
+async def usersignups(request:Request):
     user_dict = dict(await request.form())
     print(user_dict)
     # 저장
@@ -28,9 +32,6 @@ async def logins(request:Request):
 
     return templates.TemplateResponse(name="login/logins.html", context={'request':request})
 
-@router.get("/usersignups", response_class=HTMLResponse)
-async def usersignups(request:Request):
-    return templates.TemplateResponse(name="login/user_sign_ups.html", context={'request':request})
 
 @router.get("/entersignups", response_class=HTMLResponse)
 async def entersignups(request:Request):
