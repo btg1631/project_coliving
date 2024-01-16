@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
-from utils.paginations import Paginations
+from utils.faqs_paginations import Paginations
 class Database:
     # model = collection
     def __init__(self, model):
