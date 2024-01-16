@@ -5,8 +5,8 @@ from fastapi import Request
 from beanie import init_beanie
 
 from databases.connections import Database
-from models.enters_rooms import ENTER_ROOMS_DATA
-collection_room_regist = Database(ENTER_ROOMS_DATA)
+from models.enters_rooms import ENTER_ROOM_DATA
+collection_room_regist = Database(ENTER_ROOM_DATA)
 
 router = APIRouter()
 
@@ -34,6 +34,6 @@ async def enter_room_regist(request:Request):
     print(regist_dict)
 
     # 저장
-    regist = ENTER_ROOMS_DATA(**regist_dict)
+    regist = ENTER_ROOM_DATA(**regist_dict)
     await collection_room_regist.save(regist)
     return templates.TemplateResponse(name="enter/main_enters.html",context={'request':request,'regist':regist})
