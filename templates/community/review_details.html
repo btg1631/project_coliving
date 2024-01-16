@@ -6,13 +6,20 @@
 
 {% block main_container %}
 <div class="container">
-<h2>입주후기 내용</h2>
-<div>{{review.review_title}}</div>
-<img src="/images/{{ review.review_image }}" alt="사진">
-<div>{{review.review_content}}</div>
+
+<div class="row">
+    <div class="col-11" style="font-size:40px; margin-bottom:15px;">{{review.review_title}}</div>
+    <form action="/community/delete_review/{{ review.id }}" class="col-1" method="get">
+        <button type="submit" class="btn btn-outline-danger">삭제</button>
+    </form>    
+</div>
+
+<img style="width:600px; height:600px" src="/images/{{ review.review_image }}" alt="사진">
+<div >{{review.review_content}}</div>
 
 
 <!-- 댓글 기능 추가 -->
-
+<hr>
+<div>댓글</div>
 </div>
 {% endblock %}
