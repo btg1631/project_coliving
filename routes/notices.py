@@ -28,7 +28,9 @@ async def introduction(request:Request):
 # QNA 창으로 이동
 @router.get("/qnas", response_class=HTMLResponse)
 async def qna(request:Request):
-    return templates.TemplateResponse(name="notice/qnas.html", context={'request':request})
+    qna_list = await collection_qna.get_all()
+    print(qna_list)
+    return templates.TemplateResponse(name="notice/qnas.html", context={'request':request,'qna':qna_list})
 
 # QNA 자세히 보기
 @router.get("/qnas_details",response_class=HTMLResponse)

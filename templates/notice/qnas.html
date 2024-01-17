@@ -18,24 +18,16 @@ FAQ
           </tr>
       </thead>
       <tbody>
+        {% for qnas in qna %}
           <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td> <a href="qnas_details"> john@example.com</a></td>
-              <td></td>
+            
+              <td>{{qnas.number}}</td>
+              <td>{{qnas.catagory}}</td>
+              <td><a href="qnas_details">{{qnas.title}} </a></td>
+              <td>{{qnas.date}}</td>
+            
           </tr>
-          <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-              <td>mary@example.com</td>
-              <td></td>
-          </tr>
-          <tr>
-              <td>July</td>
-              <td>Dooley</td>
-              <td>july@example.com</td>
-              <td></td>
-          </tr>
+          {%endfor%}
       </tbody>
   </table>
   <ul class="">
