@@ -5,6 +5,7 @@ from models.rooms import ROOM_DATA
 from models.reviews import REVIEW_DATA
 from models.enters_users import ENTER_USER_DATA
 from models.enters_rooms import ENTER_ROOM_DATA
+from models.faqs import FAQ
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 # 변경 후 코드
@@ -16,7 +17,7 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[USER_DATA, ROOM_DATA, REVIEW_DATA,ENTER_USER_DATA,ENTER_ROOM_DATA])
+                          document_models=[USER_DATA, ROOM_DATA, REVIEW_DATA,ENTER_USER_DATA,ENTER_ROOM_DATA,FAQ])
     
     class Config:
         env_file = ".env"
