@@ -13,7 +13,7 @@
             <input class=searchcss type="search" name="word" placeholder="이름을 검색하세요." value="{{users.word}}">
         </div>
         <div class="col-2">
-            <button type="submit" formaction="/admin/adminusers"
+            <button type="submit" formaction="/admin/admin_enterusers"
                 class="searchbutton btn btn-outline-primary">
                 검색</button>
         </div>
@@ -28,6 +28,7 @@
                 <th>No. </th>
                 <th>회원 이름</th>
                 <th>이메일</th>
+                <th>비밀번호</th>
                 <th>전화번호</th>
                 <th>회원 삭제</th>
             </tr>
@@ -41,9 +42,10 @@
                 <td>{{loop.index0+1}}</td>
                 <td>{{user.name}}</a></td>
                 <td>{{user.email}}</td>
+                <td>{{user.pasword}}</td>
                 <td>{{user.phonenumber}}</td>
                 <td>
-                    <form action="/admin/delete_user/{{ user.id }}" method="get">
+                    <form action="/admin/delete_enter_user/{{ user.id }}" method="get">
                         <button type="submit" class="btn btn-outline-danger">삭제</button>
                     </form>
                 </td>

@@ -5,13 +5,12 @@
 {% endblock %}
 
 {% block main_container %}
-<div class="container">
-    <h2>room details</h2>
+<div class="container" style="padding-top: 70px; padding-bottom: 100px; text-align: center; background-color:bisque;">
     <!-- 제목 -->
     <span class="room_details brand">{{ rooms.room_brand }} </span>
     <span class="room_details local">{{ rooms.room_local }} </span>
     <span class="room_details title">{{ rooms.room_title }}</span>
-
+    <hr>
     <!-- 이미지 슬라이드 -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
         <div class="carousel-indicators">
@@ -57,7 +56,10 @@
         <div> 지점 소개 </div>
         <div>{{ rooms.room_text }}</div>
         <div> 상세 정보 </div>
-        <div >{{ rooms.room_text }}</div>
+        <div >기타/거주인원/평수/집 구성/ 세대 추가 옵션/기본 옵션/ 월 이용 정상가/할인가/비고{{ rooms.room_layout }}</div>
+        <div >{{ rooms.room_option }}</div>
+        <div >{{ rooms.room_default_option }}</div>
+        <div >{{ rooms.room_price }}</div>
         <div> 위치 및 교통 </div>
         <img src="/images/map.PNG" alt="">
     </div>
