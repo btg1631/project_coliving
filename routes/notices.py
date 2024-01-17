@@ -5,6 +5,9 @@ from fastapi import Request
 from beanie import init_beanie
 
 from databases.connections import Database
+from models.notices import NOTICE_DATA
+collection_notice = Database(NOTICE_DATA)
+from databases.connections import Database
 from models.faqs import FAQ
 collection_faq = Database(FAQ)
 
@@ -19,7 +22,9 @@ templates = Jinja2Templates(directory="templates/")
 
 @router.get("/notices", response_class=HTMLResponse)
 async def notices(request:Request):
-    return templates.TemplateResponse(name="notice/notices.html", context={'request':request})
+    notice_list = await collection_notice.get_all()
+    return templates.TemplateResponse(name="notice/notices.html", context={'request':request,
+                                                                           'notices':notice_list})
 
 @router.get("/introductions", response_class=HTMLResponse)
 async def introduction(request:Request):
