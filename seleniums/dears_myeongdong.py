@@ -49,8 +49,9 @@ time.sleep(2)
 # 전체 상품 정보
 selector_value = "div.roomR.inlineB > ul > li:nth-child(1)"
 element_bundle = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value)
-# 썸네일 이미지
+# 썸네일 이미지 (룸 별 2개씩)
 selector_images = "ul > div.owl-stage-outer > div > div.owl-item.active > li"
+https://www.dearsmd.com/images/sub/room_img01_2.png
 element_images = browser.find_elements(by=By.CSS_SELECTOR, value=selector_images)
 for element_item in element_bundle:
     for element_img in element_images:
@@ -72,15 +73,6 @@ for element_item in element_bundle:
         contents = element_contents.text
     except :
         contents = "None"
-    for i in range(3) :
-        # Book Button  ** 투어하기가 아닌 숙박 예약 화면으로 넘어가기에, 구현할지 확인 필요
-        try:
-            element_click_book = browser.find_element(by=By.CSS_SELECTOR,value = "li:nth-child(1) > div.room_text > a.btn_f29.wid100") # Book 버튼 정보 추출
-            element_click_book.click()                                                                                                 # Book 버튼 클릭
-        except: 
-            break
-        time.sleep(3)
-        pass
 
     # # 기타(시설,세대옵션)
     # # body > div:nth-child(1) > main > section:nth-child(5) > div > div > div.grid.grid-cols-2.gap-x-10.gap-y-\[80px\] > div:nth-child(4) > div.mt-\[30px\].flex.flex-col.items-start.desktop\:mt-6 > div.mt-4.grid.gap-y-2.whitespace-pre-wrap.font-normal.leading-6.text-slate-800.desktop\:mt-5.desktop\:gap-y-2\.5.desktop\:text-lg > div > div

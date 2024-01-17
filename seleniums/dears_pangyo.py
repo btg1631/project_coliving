@@ -127,18 +127,18 @@ for element_item in element_bundle[0:4]:
         reference = "None"
 
 
-    print("썸네일 주소 : {}, 제목 : {}, 룸타입 : {}, 기타(시설,세대옵션) : {}, 거주인원/평수 : {}, 집 구성 : {}, 세대 추가 옵션 : {}, 기본 옵션 : {}, 월 이용 정상가 : {}, 월 이용 할인가 : {}, 비고 : {}".format(image, title, room_type, household_option, numberOfResidenceAndPy, house_composition, additional_option, basic_option, old_price, new_price, reference))
-    room_infor.insert_one({"썸네일 주소" : image
-                            , "제목" : title
-                            , "룸타입" : room_type
-                            , "기타" : household_option
-                            , "거주인원/평수" : numberOfResidenceAndPy
-                            , "집 구성" : house_composition
-                            , "세대 추가 옵션" : additional_option
-                            , "기본 옵션" : basic_option
-                            , "월 이용 정상가" : old_price
-                            , "월 이용 할인가" : new_price
-                            , "비고": reference})
+    print("room_image : {}, room_title : {}, room_type : {}, room_any : {}, room_size : {}, room_layout : {}, room_option : {}, room_default_option : {}, room_price : {}, room_discounted_price : {}, room_note : {}".format(image, title, room_type, household_option, numberOfResidenceAndPy, house_composition, additional_option, basic_option, old_price, new_price, reference))
+    room_infor.insert_one({"room_image" : image
+                            , "room_title" : title
+                            , "room_type" : room_type
+                            , "room_any" : household_option
+                            , "room_size" : numberOfResidenceAndPy
+                            , "room_layout" : house_composition
+                            , "room_option" : additional_option
+                            , "room_default_option" : basic_option
+                            , "room_price" : old_price
+                            , "room_discounted_price" : new_price
+                            , "room_note": reference})
     pass
 pass
 
