@@ -81,7 +81,7 @@
                             </select>
                         </div>
                         <div class="col-6">
-                            <input class=searchcss type="search" placeholder="지역, 지하철명, 학교명을 입력해 보세요" name="search"
+                            <input class=searchcss type="search" placeholder="지역명을 입력해 보세요" name="search"
                                 value="{{search_dict.search}}">
                         </div>
                         <div class="col-2">
@@ -110,12 +110,13 @@
                                             <span class="brand">{{ room.room_brand }}</span>
                                             <span class="local">{{ room.room_local }}</span>
                                             <span class="title">{{ room.room_title }}</span>
+                                            <div class="room_type">{{ room.room_type }}</div>
+                                            <div class="room_size">{{ room.room_size }}</div>
                                             <span class="favorite">
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-sm btn-outline-danger">찜</button>
                                                 </div>
                                             </span>
-                                            <p class="room_type">{{ room.room_type }}</p>
                                         </div>
                                     </a>
                                 </div>

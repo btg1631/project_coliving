@@ -18,14 +18,9 @@
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                 aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
                 <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
@@ -55,11 +50,16 @@
     <div class="tab-list text-center">
         <div> 지점 소개 </div>
         <div>{{ rooms.room_text }}</div>
+        <hr>
         <div> 상세 정보 </div>
-        <div >기타/거주인원/평수/집 구성/ 세대 추가 옵션/기본 옵션/ 월 이용 정상가/할인가/비고{{ rooms.room_layout }}</div>
-        <div >{{ rooms.room_option }}</div>
-        <div >{{ rooms.room_default_option }}</div>
-        <div >{{ rooms.room_price }}</div>
+        <div>집 구성</div><div>{{ rooms.room_layout }}</div>
+        <div>거주인원/평수</div><div>{{ rooms.room_size }}</div>
+        <div>세대 추가 옵션</div><div>{{ rooms.room_default_option }}</div>
+        <div>월 이용 정상가</div><div>{{ rooms.room_price }}</div>
+        <div>월 이용 할인가</div><div>{{ rooms.room_discounted_price }}</div>
+        <div>비고</div><div>{{ rooms.room_note }}</div>
+        <div>기타</div><div>{{ rooms.room_any }}</div>
+        <hr>
         <div> 위치 및 교통 </div>
         <img src="/images/map.PNG" alt="">
     </div>
