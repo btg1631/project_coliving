@@ -1,0 +1,42 @@
+{% extends "main_template.html"%}
+
+{% block title %}
+FAQ
+
+{% endblock %}
+
+{% block main_container %}
+<div class="container" >
+<form action="">
+  <table class="table table-hover">
+      <thead>
+          <tr>
+              <th>번호</th>
+              <th>카테고리</th>
+              <th>제목</th>
+              <th>작성일</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for qnas in qna %}
+          <tr>
+            
+              <td>{{qnas.number}}</td>
+              <td>{{qnas.catagory}}</td>
+              <td><a href="qnas_details">{{qnas.title}} </a></td>
+              <td>{{qnas.date}}</td>
+            
+          </tr>
+          {%endfor%}
+      </tbody>
+  </table>
+  <ul class="">
+    <li class="nav-item">
+        <a class="nav-link" href="/notice/qnas_inputs" >qna 작성</a>
+    </li>
+   
+  </ul>
+</form>
+</div>
+</div>
+{% endblock %}

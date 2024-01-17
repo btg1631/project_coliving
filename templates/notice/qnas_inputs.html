@@ -1,0 +1,32 @@
+{% extends "main_template.html"%}
+
+{% block title %}
+FAQ_details
+
+{% endblock %}
+
+{% block main_container %}
+<form action="">
+    <div class="mb-3 mt-3">
+        <label for="text" class="form-label">Email:</label>
+        <input type="title" class="form-control" id="title" placeholder="title" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="sel1" class="form-label">카테고리:</label>
+        <select class="form-select" id="sel" name="sellist">
+            <option value="Option1">월세</option>
+            <option value="Option2">전세</option>
+            <option value="Option3">대여</option>
+            <option value="Option4">4</option>
+        </select>
+    </div>
+    <div>
+        <label for="comment">Comments:</label>
+        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" formaction="/notice/qnas" formmethod="get">등록</button>
+    <button type="submit" class="btn btn-primary" formaction="/notice/qnas_inputs">취소</button>
+
+</form>
+
+{% endblock %}

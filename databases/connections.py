@@ -5,8 +5,11 @@ from models.rooms import ROOM_DATA
 from models.reviews import REVIEW_DATA
 from models.enters_users import ENTER_USER_DATA
 from models.enters_rooms import ENTER_ROOM_DATA
+from models.qnas import QNA
+from models.notices import NOTICE_DATA
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
+
 # 변경 후 코드
 from pydantic_settings import BaseSettings
 
@@ -16,7 +19,9 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[USER_DATA, ROOM_DATA, REVIEW_DATA,ENTER_USER_DATA,ENTER_ROOM_DATA])
+                          document_models=[USER_DATA, ROOM_DATA,
+                                           REVIEW_DATA,ENTER_USER_DATA,ENTER_ROOM_DATA,
+                                           QNA, NOTICE_DATA])
     
     class Config:
         env_file = ".env"
@@ -53,6 +58,17 @@ class Database:
             await doc.delete()
             return True
         return False
+    
+    # 수정
+    async def update_one(self, id: PydanticObjectId, update_dict: dict) -> bool:
+        doc = await self.model.get(id)
+        if doc:
+            for key, value in update_dict.items():
+                setattr(doc, key, value)
+            await doc.save()
+            return True
+        return False
+
     
     # column 값으로 여러 Documents 가져오기
     async def getsbyconditions(self, conditions:dict) -> [Any]:

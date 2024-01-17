@@ -3,7 +3,6 @@
 {% block title %}
 입주 후기
 {% endblock %}
-
 {% block main_container %}
 <div class="container">
     <h2>입주 후기</h2>
@@ -11,7 +10,7 @@
         <!-- 검색 -->
         <div class="row">
             <div class="col-7">
-                <input class=searchcss type="search" name="word" value="{{reviews.word}}">
+                <input class=searchcss type="search" name="word" value="{{user_dict.word}}">
             </div>
             <div class="col-2">
                 <button type="submit" formaction="/community/moveinreviews"
@@ -23,9 +22,9 @@
                     글쓰기</button>
             </div>
         </div>
-    </form>
+    
 
-    <form action="">
+    
         <!-- table -->
         <table class="table table-hover">
             <thead>
@@ -60,29 +59,29 @@
                 <ul class="pagination justify-content-center">
                     <li class="page-item {{ '' if pagination.has_previous_block else 'disabled' }}">
                         <button type="submit" class="page-link"
-                            formaction="/community/moveinreviews/{{pagination.first_page}}">
+                            formaction="/community/moveinreviews/{{pagination.first_page}}?word={{reviews.word}}">
                             맨 처음
                         </button>
 
                     </li>
                     <li class="page-item {{ '' if pagination.has_previous_page else 'disabled' }}">
                         <button type="submit" class="page-link"
-                            formaction="/community/moveinreviews/{{pagination.previous_page}}">이전</button>
+                            formaction="/community/moveinreviews/{{pagination.previous_page}}?word={{reviews.word}}">이전</button>
                     </li>
                     {% for page_num in pagination.current_page_range %}
                     <li class="page-item {{ 'active' if page_num == pagination.current_page else '' }}">
-                        <button type="submit" class="page-link" formaction="/community/moveinreviews/{{ page_num }}">
+                        <button type="submit" class="page-link" formaction="/community/moveinreviews/{{ page_num }}?word={{reviews.word}}">
                             {{page_num}}
                         </button>
                     </li>
                     {% endfor %}
                     <li class="page-item {{ '' if pagination.has_next_page else 'disabled' }}">
                         <button type="submit" class="page-link"
-                            formaction="/community/moveinreviews/{{ pagination.next_page }}">다음</button>
+                            formaction="/community/moveinreviews/{{ pagination.next_page }}?word={{reviews.word}}">다음</button>
                     </li>
                     <li class="page-item {{ '' if pagination.has_next_block else 'disabled' }}">
                         <button type="submit" class="page-link"
-                            formaction="/community/moveinreviews/{{ pagination.last_page }}">
+                            formaction="/community/moveinreviews/{{ pagination.last_page }}?word={{reviews.word}}">
                             맨 끝
                         </button>
                     </li>
