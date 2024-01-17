@@ -10,8 +10,8 @@
   "room_any": "None",
   "room_size": "1인 (7평  |  23.95㎡)",
   "room_layout": "방 1  |   화장실 1",
-  "room_option": "room_default_option만 포함",
-  "room_default_option": "room_default_option만 포함\n세탁기, 에어컨, 냉장고, 쿡탑, 전자레인지, 커피포트, 커튼/블라인드",
+  "room_option": "기본 옵션만 포함",
+  "room_default_option": "기본 옵션만 포함\n세탁기, 에어컨, 냉장고, 쿡탑, 전자레인지, 커피포트, 커튼/블라인드",
   "room_price": "월 130만 원",
   "room_discounted_price": "월 100만 원 부터",
   "room_note": "* 2년 계약 시 4개월 렌트프리 적용 기준가\n**보증금 5백만원 기준. 세대 타입과 거주 기간에 따라 월 이용료 상이. 공과금과 관리비는 별도 납부 요망"
