@@ -8,6 +8,7 @@ from models.enters_rooms import ENTER_ROOM_DATA
 from models.faqs import FAQ
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
+
 # 변경 후 코드
 from pydantic_settings import BaseSettings
 
@@ -54,6 +55,17 @@ class Database:
             await doc.delete()
             return True
         return False
+    
+    # 수정
+    async def update_one(self, id: PydanticObjectId, update_dict: dict) -> bool:
+        doc = await self.model.get(id)
+        if doc:
+            for key, value in update_dict.items():
+                setattr(doc, key, value)
+            await doc.save()
+            return True
+        return False
+
     
     # column 값으로 여러 Documents 가져오기
     async def getsbyconditions(self, conditions:dict) -> [Any]:
