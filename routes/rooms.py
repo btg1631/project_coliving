@@ -30,7 +30,6 @@ import re
 @router.post("/find_rooms")
 async def find_rooms(request:Request):
     search_dict = dict(await request.form())
-    print(search_dict)
     conditions = {}
     if search_dict['search'] != '':
         regex_pattern = re.compile(search_dict['search'], re.IGNORECASE)
@@ -54,8 +53,6 @@ from beanie import PydanticObjectId
 @router.get("/room_details/{object_id}")
 async def room_detail(request:Request, object_id:PydanticObjectId):
     search_dict = dict(await request.form())
-    print(search_dict)
-    # 
     room_list = await collection_rooms.get(object_id)
     print(room_list)
     return templates.TemplateResponse(name="room/room_details.html", context={'request':request,
