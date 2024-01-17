@@ -36,9 +36,12 @@
 ---
 |컬렉션|각 key값|
 |--|--|
-|ROOM_DATA|room_brand, room_local, room_title, room_image, room_type, room_size, room_text|
-|REVIEW_DATA|review_title, review_content, review_image|
+|ROOM_DATA|room_brand, room_local, room_image, room_image_two, room_title, room_type, room_any, room_size, room_layout, room_option, room_default_option, room_note|
+|ENTER_ROOM_DATA|address, dong_address, ho_adress, price|
 |USER_DATA|name, email, password, phonenumber|
+|ENTER_USER_DATA|name, email, password, phonenumber, enter_number|
+|NOTICE_DATA|notice_title, notice_text|
+|REVIEW_DATA|review_title, review_content, review_image|
 
 
 ## 프로젝트 진행
