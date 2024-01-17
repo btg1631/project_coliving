@@ -40,30 +40,12 @@ time.sleep(1)
 element_dears_menu.click()
 time.sleep(2)
 
+selector_value = "div.roomR.inlineB > ul > li"
+# #content > div.s_contents > div > div > div.roomR.inlineB > ul > li:nth-child(1)
+element_bundle = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value)
+
 # 전체 상품 정보
-for i in range(1, 4):
-    selector_value = "div.roomR.inlineB > ul > li:nth-child({})".format(i)
-    # #content > div.s_contents > div > div > div.roomR.inlineB > ul > li:nth-child(1)
-    element_bundle = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value)
-
-    # 썸네일 이미지 (룸 별 2개씩)
-    selector_images_first = "ul > div.owl-stage-outer > div > div:nth-child(5)"
-    selector_images_second = "ul > div.owl-stage-outer > div > div:nth-child(6)"
-    element_images_first = browser.find_elements(by=By.CSS_SELECTOR, value=selector_images_first)
-    element_images_second = browser.find_elements(by=By.CSS_SELECTOR, value=selector_images_second)
-    for element_item in element_bundle:
-        for element_img in element_images_first:
-            element_image = element_img.find_element(by=By.CSS_SELECTOR, value=selector_images_first)
-            image = element_image.get_attribute('src')
-            pass
-        time.sleep(2)
-    for element_item in element_bundle:
-        for element_img in element_images_second:
-            element_image = element_img.find_element(by=By.CSS_SELECTOR, value=selector_images_second)
-            image = element_image.get_attribute('src')
-            pass
-        time.sleep(2)
-
+for element_item in element_bundle:
     # 상품 제목
     try:
         selector_value_title = "div.room_text > strong"
@@ -71,9 +53,24 @@ for i in range(1, 4):
         title = element_title.text
     except:
         title = "None"
+    # 이미지 1
+    try:
+        element_images_first = "div:nth-child(5) > li > img"
+        element_image1 = element_item.find_element(by=By.CSS_SELECTOR, value=element_images_first)
+        image1 = element_image1.get_attribute('src')
+    except:
+        image1 = "None"
+    # 이미지 2
+    try:
+        element_images_second = "div:nth-child(6) > li > img"
+        element_image2 = element_item.find_element(by=By.CSS_SELECTOR, value=element_images_second)
+        image2 = element_image2.get_attribute('src')
+    except:
+        image2 = "None"
 
     # contents (층수/뷰/방구성/면적)
     #content > div.s_contents > div > div > div.roomR.inlineB > ul > li:nth-child(1) > div.room_text > p
+    #content > div.s_contents > div > div > div.roomR.inlineB > ul > li > div.room_text > p
     try :
         selector_value_contents = "div.room_text > p"
         element_contents = element_item.find_element(by=By.CSS_SELECTOR, value=selector_value_contents)
@@ -81,12 +78,63 @@ for i in range(1, 4):
     except :
         contents = "None"
 
-    print("room_image_one : {}, room_image_two : {}, room_title : {}, room_contents : {}".format(element_images_first, element_images_second, title, contents))
-    room_infor.insert_one({"room_image_one" : element_images_first
-                           , "room_image_two" : element_images_second
-                            ,"room_title" : title
-                            ,"room_contents" : contents})
+    print("room_image_one : {}, room_image_two:{}, room_title:{}, room_contents : {}".format(image1, image2, title, contents))
+    room_infor.insert_one({"room_image_one" : image1
+                            , "room_image_two" : image2
+                            , "room_title" : title
+                            , "room_contents" : contents})
     pass
+# ------------------------------------------------------------------------------------------------------------------------
+# Rooms - Stay L 클릭
+selector_stayl = '#content > ul > li.on > a'
+element_move_stayl = browser.find_element(by=By.CSS_SELECTOR, value=selector_stayl)
+time.sleep(3)
+element_move_stayl.click()
+# browser.execute_script("arguments[0].click();", element_move_stayl)
+time.sleep(2)
+
+selector_value_stayl = "div > div.roomR.inlineB > ul > li"
+element_bundle_stayl = browser.find_elements(by=By.CSS_SELECTOR, value=selector_value_stayl)
+
+# 전체 상품 정보
+for element_item_stayl in element_bundle_stayl:
+    # 상품 제목
+    try:
+        selector_value_title_stayl = "div.room_text > strong"
+        element_title_stayl = element_item_stayl.find_element(by=By.CSS_SELECTOR, value=selector_value_title_stayl)
+        title_stayl = element_title_stayl.text
+    except:
+        title_stayl = "None"
+    # 이미지 1
+    try:
+        element_images_first_stayl = "div:nth-child(4) > li > img"
+        element_image1_stayl = element_item_stayl.find_element(by=By.CSS_SELECTOR, value=element_images_first_stayl)
+        image1_stayl = element_image1_stayl.get_attribute('src')
+    except:
+        image1_stayl = "None"
+    # 이미지 2
+    try:
+        element_images_second_stayl = "div:nth-child(5) > li > img"
+        element_image2_stayl = element_item_stayl.find_element(by=By.CSS_SELECTOR, value=element_images_second_stayl)
+        image2_stayl = element_image2_stayl.get_attribute('src')
+    except:
+        image2_stayl = "None"
+
+    # contents (층수/뷰/방구성/면적)
+    try :
+        selector_value_contents_stayl = "div.room_text > p"
+        element_contents_stayl = element_item_stayl.find_element(by=By.CSS_SELECTOR, value=selector_value_contents_stayl)
+        contents_stayl = element_contents_stayl.text
+    except :
+        contents_stayl = "None"
+
+    print("room_image_one : {}, room_image_two:{}, room_title:{}, room_contents : {}".format(image1_stayl, image2_stayl, title_stayl, contents_stayl))
+    room_infor.insert_one({"room_image_one" : image1_stayl
+                            , "room_image_two" : image2_stayl
+                            , "room_title" : title_stayl
+                            , "room_contents" : contents_stayl})
+    pass
+
 pass
 
 # 브라우저 종료

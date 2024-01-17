@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "65a780bacac522846c59f191"
+  },
+  "room_image_one": "https://www.dearsmd.com/images/sub/room_img01_3.png",
+  "room_image_two": "https://www.dearsmd.com/images/sub/room_img01.png",
+  "room_title": "Breve (브레베)",
+  "room_contents": "Floor 4/ 5/ 6/ 7\n남산/ 시티뷰\n1 Double Bed or 2 Single Beds\n18.4㎡~21.1㎡"
+},
+{
+  "_id": {
+    "$oid": "65a780bacac522846c59f192"
+  },
+  "room_image_one": "https://www.dearsmd.com/images/sub/room_img02_2.png",
+  "room_image_two": "https://www.dearsmd.com/images/sub/room_img02_3.png",
+  "room_title": "Cómodo (코모도)",
+  "room_contents": "Floor 8/ 9 /10\n남산/ 한옥마을/ 시티뷰\n1 Double Bed or 2 Single Beds or 1 Single Bed\n18.4㎡~21.1㎡"
+},
+{
+  "_id": {
+    "$oid": "65a780bacac522846c59f193"
+  },
+  "room_image_one": "https://www.dearsmd.com/images/sub/room_img03_2.png",
+  "room_image_two": "https://www.dearsmd.com/images/sub/room_img03_3.png",
+  "room_title": "Domingo (도밍고)",
+  "room_contents": "Floor 13, 펜트하우스\n남산/한옥마을/시티뷰\nKing or King+Single bed\n46.1㎡~74.1㎡\nStay L (별도 문의)"
+}]
