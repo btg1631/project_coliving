@@ -57,6 +57,7 @@ templates = Jinja2Templates(directory = "templates/")
 async def root(request:Request):
     room_list = await collection_rooms.get_all()
     review_list = await collection_reviews.get_all()
+    room_list = room_list[:6]
     review_list = review_list[:4]
     return templates.TemplateResponse(name="main.html"
                                       , context={'request':request,
@@ -66,8 +67,14 @@ async def root(request:Request):
 async def root(request:Request):
     user_dict = dict(await request.form())
     print(user_dict)
+    room_list = await collection_rooms.get_all()
+    review_list = await collection_reviews.get_all()
+    room_list = room_list[:6]
+    review_list = review_list[:4]
     return templates.TemplateResponse("main.html"
-                                      , {'request':request})
+                                      , {'request':request,
+                                         'rooms':room_list,
+                                        'reviews':review_list})
 
 
 @app.get("/enter")

@@ -21,10 +21,14 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
+                <img src="{{ rooms.room_image }}" class="d-block w-100" style=" height: 800px;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ rooms.room_image }}" class="d-block w-100" alt="...">
+                {% if rooms.room_image_two %}
+                <img src="{{ rooms.room_image_two }}" class="d-block w-100" style=" height: 800px;" alt="...">
+                {% else %}
+                <img src="{{ rooms.room_image }}" class="d-block w-100" style=" height: 800px;" alt="...">
+                {% endif %}
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"

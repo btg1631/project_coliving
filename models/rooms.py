@@ -8,6 +8,7 @@ class ROOM_DATA(Document):
     room_brand: Optional[str] = None
     room_local: Optional[str] = None    
     room_image: Optional[str] = None
+    room_image_two: Optional[str] = None
     room_title: Optional[str] = None
     room_type: Optional[str] = None
     room_any: Optional[str] = None
@@ -15,8 +16,6 @@ class ROOM_DATA(Document):
     room_layout : Optional[str] = None
     room_option : Optional[str] = None
     room_default_option : Optional[str] = None
-    room_price : Optional[str] = None
-    room_discounted_price : Optional[str] = None
     room_note : Optional[str] = None
   
     class Settings:
