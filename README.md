@@ -44,8 +44,8 @@
 ## 프로젝트 진행
 ##### ■ [의뢰서](https://docs.google.com/presentation/d/1jXnKIb6BObgcawwsQxdnuJaKzaEq_aynAtOu1oHNn7U/edit#slide=id.p1)
 ##### ■ [NamingRule](images/naming_rules.png)
-##### ■ [DB구성](DOCS/database/Fitness/main.png) ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/bf9c3d9a-1869-49f0-ac34-dfd82b0d03ce)
-##### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
+##### ■ [DB구성](images/main.png) ![ERD](https://github.com/btg1631/project_coliving/blob/main/images/main.png)
+##### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1PaTjeLzbWQcow_RhyxXIo4exBDXDtT7A/edit#gid=1623924950)
 ![image](https://github.com/)
 #### ■ 팀원별 구현 기능
 ![image]()
