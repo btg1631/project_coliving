@@ -1,0 +1,24 @@
+{% extends "main_template.html"%}
+
+{% block title %}
+공지사항 내용
+{% endblock %}
+
+{% block main_container %}
+<div class="container">
+<form action="">
+    <div>
+        <button type="submit" class="btn btn-outline-primary"
+            formaction="/notice/notices">돌아가기</button>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-10" style="font-size:40px; margin-bottom:15px;">{{notice.notice_title}}</div>
+</div>
+<hr>
+<div>{{notice.notice_text}}</div>
+
+</div>
+{% endblock %}
+

@@ -5,9 +5,23 @@
 {% endblock %}
 
 {% block main_container %}
-<div class="container" >
-<h2>프로모션</h2>    
+<div class="container">
+<h2>프로모션</h2>
 
+<ul id="grid-board" class="gallery-board row">
+    {% for x in [1,2,3,4,5]%}
+    <li class="col-3 mb-5">
+      <a href="/events/53">
+        <img src="https://woozoo.s3.amazonaws.com/uploads/board/event/53/modify 2.jpg" width="100%">
+        <div>
+            <span>[종료]</span>
+            <span>12월 연말 임대료 할인 이벤트! 마감임박!</span>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+
+</ul> 
 </div>
-{% endblock %}
 
+{% endblock %}

@@ -25,6 +25,12 @@ async def notices(request:Request):
     notice_list = await collection_notice.get_all()
     return templates.TemplateResponse(name="notice/notices.html", context={'request':request,
                                                                            'notices':notice_list})
+from beanie import PydanticObjectId
+@router.get("/noticedetails/{object_id}", response_class=HTMLResponse)
+async def notices(request:Request, object_id:PydanticObjectId):
+    notice = await collection_notice.get(object_id)
+    return templates.TemplateResponse(name="notice/notice_details.html", context={'request':request,
+                                                                           'notice':notice})
 
 @router.get("/introductions", response_class=HTMLResponse)
 async def introduction(request:Request):
