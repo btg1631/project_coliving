@@ -24,3 +24,11 @@ async def introduction(request:Request):
 @router.get("/faqs", response_class=HTMLResponse)
 async def faq(request:Request):
     return templates.TemplateResponse(name="notice/faqs.html", context={'request':request})
+
+@router.get("/faqs_details",response_class=HTMLResponse)
+async def faq(request:Request):
+    return templates.TemplateResponse(name="notice/faqs_details.html",context={'request':request})
+
+@router.get("/faqs_inputs",response_class=HTMLResponse)
+async def faq(request:Request):
+    return templates.TemplateResponse(name="notice/faqs_inputs.html",context={'request':request})
