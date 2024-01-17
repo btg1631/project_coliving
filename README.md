@@ -46,7 +46,7 @@
 ##### ■ [NamingRule](images/naming_rules.png)
 ##### ■ [DB구성](images/main.png) ![ERD](https://github.com/btg1631/project_coliving/blob/main/images/main.png)
 ##### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1PaTjeLzbWQcow_RhyxXIo4exBDXDtT7A/edit#gid=1623924950)
-![image](https://github.com/)
+![image](https://github.com/btg1631/project_coliving/blob/main/images/%ED%99%94%EB%A9%B4%EC%A0%95%EC%9D%98%EC%84%9C.png)
 #### ■ 팀원별 구현 기능
 ![image]()
 ### 🎥[구현 영상](https://www.youtube.com/)
