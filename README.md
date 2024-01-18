@@ -16,12 +16,6 @@
    3. 커뮤니티에서 글쓰기, 검색, 삭제 기능
 
 
-### 링크
----
-- [Naming Rule](https://docs.google.com/spreadsheets/d/1pgseXMtVbRS0Qu6j2i6_T3EC-cICqrJl/edit#gid=1553145129)
-- [Program List](https://docs.google.com/spreadsheets/d/177dosTpc5QXqKI9N2E94pvYRHJ3T5lHF/edit#gid=389956398)
-- [Screen Definition](https://app.diagrams.net/#G13JhyVSufPlX4SV4WNJss9p5QtiRxywyE)
-
 ### 웹 스크래핑 대상
 ---
 - [디어스 판교](https://dears.kr/ko)
@@ -45,14 +39,25 @@
 
 
 ## 프로젝트 진행
-##### ■ [의뢰서](https://docs.google.com/presentation/d/1jXnKIb6BObgcawwsQxdnuJaKzaEq_aynAtOu1oHNn7U/edit#slide=id.p1)
-##### ■ [NamingRule](images/naming_rules.png)
-##### ■ [DB구성](images/main.png) ![ERD](https://github.com/btg1631/project_coliving/blob/main/images/main.png)
-##### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1PaTjeLzbWQcow_RhyxXIo4exBDXDtT7A/edit#gid=1623924950)
+---
+- [Naming Rule](https://docs.google.com/spreadsheets/d/1pgseXMtVbRS0Qu6j2i6_T3EC-cICqrJl/edit#gid=1553145129) [image](images/naming_rules.png)
+- [Program List](https://docs.google.com/spreadsheets/d/177dosTpc5QXqKI9N2E94pvYRHJ3T5lHF/edit#gid=389956398)
+- [Screen Definition](https://app.diagrams.net/#G13JhyVSufPlX4SV4WNJss9p5QtiRxywyE)
+- [의뢰서](https://docs.google.com/presentation/d/1jXnKIb6BObgcawwsQxdnuJaKzaEq_aynAtOu1oHNn7U/edit#slide=id.p1)
+- [DB구성](images/main.png) ![ERD](https://github.com/btg1631/project_coliving/blob/main/images/main.png)
+- [요구사항 정의서](https://docs.google.com/spreadsheets/d/1PaTjeLzbWQcow_RhyxXIo4exBDXDtT7A/edit#gid=1623924950)
 ![image](https://github.com/btg1631/project_coliving/blob/main/images/%ED%99%94%EB%A9%B4%EC%A0%95%EC%9D%98%EC%84%9C.png)
 #### ■ 팀원별 구현 기능
 ![image](https://github.com/btg1631/project_coliving/blob/main/images/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EB%A6%AC%EC%8A%A4%ED%8A%B8(%EC%97%85%EB%AC%B4%EB%82%B4%EC%97%AD).png)
 ### 🎥[구현 영상](https://www.youtube.com/)
+#### ■ 주요 기능
+**<사용자>**
+- 회원가입 -> 검색 (타입별 방) -> 예약 -> 마이페이지 -> 예약 조회 및 수정, 삭제
+- 마이페이지(회원 기본정보 확인 및 수정)
+- 커뮤니티 글 쓰기
+
+**<관리자>**
+- 회원관리, 예약관리, 게시판관리, 공지사항 수정/삭제, 관리자 설정
 
 ```
 
