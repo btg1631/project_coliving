@@ -50,7 +50,8 @@
 ![image](https://github.com/btg1631/project_coliving/blob/main/images/%ED%99%94%EB%A9%B4%EC%A0%95%EC%9D%98%EC%84%9C.png)
 #### ■ 팀원별 구현 기능
 ![image](https://github.com/btg1631/project_coliving/blob/main/images/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EB%A6%AC%EC%8A%A4%ED%8A%B8(%EC%97%85%EB%AC%B4%EB%82%B4%EC%97%AD).png)
-### 🎥[구현 영상](https://www.youtube.com/watch?v=DL7DeUd5Dhg) [image](https://github.com/btg1631/project_coliving/blob/main/images/%EA%B5%AC%ED%98%84%EC%98%81%EC%83%81.png)
+### 🎥[구현 영상](https://www.youtube.com/watch?v=DL7DeUd5Dhg) 및 
+[구현영상 첫화면](https://github.com/btg1631/project_coliving/blob/main/images/%EA%B5%AC%ED%98%84%EC%98%81%EC%83%81.png)
 #### ■ 주요 기능
 **<사용자>**
 - 회원가입 → 로그인 → 방 검색 → 투어하기 또는 예약 → 마이페이지 → 예약 조회 및 수정, 삭제
