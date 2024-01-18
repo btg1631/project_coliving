@@ -13,7 +13,7 @@
                 <input class=searchcss type="search" name="word" value="{{user_dict.word}}">
             </div>
             <div class="col-2">
-                <button type="submit" formaction="/community/moveinreviews"
+                <button type="submit" formaction="/community/moveinreviews?word={{user_dict.word}}"
                     class="searchbutton btn btn-outline-primary">
                     검색</button>
             </div>
@@ -23,7 +23,7 @@
             </div>
         </div>
     
-
+        <!-- input에 hidden 속성 사용하여 검색어 넘겨줌 -->
     
         <!-- table -->
         <table class="table table-hover">
@@ -43,7 +43,7 @@
                 {% for review in reviews %}
                 <tr>
                     <td>{{pagination.start_record_number + loop.index}}</td>
-                    <td><a href="/community/reviewdetails/{{review.id}}">{{ review.review_title}}</a></td>
+                    <td><a href="/community/reviewdetails/{{review.id}}?word={{reviews.word}}">{{ review.review_title}}</a></td>
                     <td>영지</td>
                     <td>24/01/14</td>
                     <td>1</td>
